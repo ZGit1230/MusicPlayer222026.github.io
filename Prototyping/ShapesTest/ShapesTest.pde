@@ -6,10 +6,10 @@ int appHeight = displayHeight;
 //Population using unitless ratios (i.e. millimeters to pixels)
 int paperWidth = 400; //Best Practice: local variables use to make DIV Variables
 int paperHeight = 300; //MrM #'s, students must use their own
-float stopDivX = appWidth * 100 / paperWidth;
-float stopDivY = appHeight * 75 / paperHeight;
-float stopDivWidth = appWidth * 200 / paperWidth;
-float stopDivHeight = appHeight * 150 / paperHeight;
+float stopDivX = appWidth * 125 / paperWidth;
+float stopDivY = appHeight * 50 / paperHeight;
+float stopDivWidth = appWidth * 150 / paperWidth;
+float stopDivHeight = appHeight * 200 / paperHeight;
 //
 //DIVs
 //rect( DivX, DivY, DivWidth, DivHeight );
