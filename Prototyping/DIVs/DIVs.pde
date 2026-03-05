@@ -22,6 +22,16 @@ float optionsDivY = appHeight * 50 / paperHeight;
 float optionsDivWidth = appWidth * 50 / paperWidth;
 float optionsDivHeight = appHeight * 140 / paperHeight;
 rect(optionsDivX, optionsDivY, optionsDivWidth, optionsDivHeight);
+  float optionsSymbol1DivX = optionsDivX + optionsDivWidth * 1/2;
+  float optionsSymbol1DivY = optionsDivY + optionsDivHeight * 1/4;
+  float optionsSymbolDivSize = 20;
+  circle(optionsSymbol1DivX, optionsSymbol1DivY, optionsSymbolDivSize);
+  float optionsSymbol2DivX = optionsDivX + optionsDivWidth * 1/2;
+  float optionsSymbol2DivY = optionsDivY + optionsDivHeight * 1/2;
+  circle(optionsSymbol2DivX, optionsSymbol2DivY, optionsSymbolDivSize);
+  float optionsSymbol3DivX = optionsDivX + optionsDivWidth * 1/2;
+  float optionsSymbol3DivY = optionsDivY + optionsDivHeight * 3/4;
+  circle(optionsSymbol3DivX, optionsSymbol3DivY, optionsSymbolDivSize);
 
 float exitDivX = appWidth * 675 / paperWidth;
 float exitDivY = appHeight * 50 / paperHeight;
@@ -82,6 +92,19 @@ float prevDivY = appHeight * 1000 / paperHeight;
 float prevDivWidth = appWidth * 50 / paperWidth;
 float prevDivHeight = appHeight * 140 / paperHeight;
 rect(prevDivX, prevDivY, prevDivWidth, prevDivHeight);
+  float prevSymbol1DivX1 = prevDivX + prevDivWidth * 3/4;
+  float prevSymbol1DivY1 = prevDivY + prevDivHeight * 1/4;
+  float prevSymbol1DivX2 = prevDivX + prevDivWidth * 3/4;
+  float prevSymbol1DivY2 = prevDivY + prevDivHeight * 3/4;
+  float prevSymbol1DivX3 = prevDivX + prevDivWidth * 1/2;
+  float prevSymbol1DivY3 = prevDivY + prevDivHeight * 1/2;
+  triangle(prevSymbol1DivX1, prevSymbol1DivY1, prevSymbol1DivX2, prevSymbol1DivY2, prevSymbol1DivX3, prevSymbol1DivY3);
+  
+  float prevSymbol2DivX = prevDivX + prevDivWidth * 3/8;
+  float prevSymbol2DivY = prevDivY + prevDivHeight * 1/4;
+  float prevSymbol2DivWidth = prevDivWidth * 1/8;
+  float prevSymbol2DivHeight = prevDivHeight * 1/2;
+  rect(prevSymbol2DivX, prevSymbol2DivY, prevSymbol2DivWidth, prevSymbol2DivHeight);
 
 float rewindDivX = appWidth * 325 / paperWidth;
 float rewindDivY = appHeight * 1000 / paperHeight;
@@ -157,3 +180,4 @@ rect(nextDivX, nextDivY, nextDivWidth, nextDivHeight);
   float nextSymbol2DivWidth = nextDivWidth * 1/8;
   float nextSymbol2DivHeight = nextDivHeight * 1/2;
   rect(nextSymbol2DivX, nextSymbol2DivY, nextSymbol2DivWidth, nextSymbol2DivHeight);
+  
