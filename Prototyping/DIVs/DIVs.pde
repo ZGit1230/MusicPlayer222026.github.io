@@ -16,6 +16,23 @@ float menuDivY = appHeight * 50 / paperHeight;
 float menuDivWidth = appWidth * 50 / paperWidth;
 float menuDivHeight = appHeight * 140 / paperHeight;
 rect(menuDivX, menuDivY, menuDivWidth, menuDivHeight);
+  float menuSymbol1DivX = menuDivX + menuDivWidth * 1/4;
+  float menuSymbol1DivY = menuDivY + menuDivHeight * 1.5/8;
+  float menuSymbol1DivWidth = menuDivWidth * 1/2;
+  float menuSymbol1DivHeight = menuDivHeight * 1/8;
+  rect(menuSymbol1DivX, menuSymbol1DivY, menuSymbol1DivWidth, menuSymbol1DivHeight);
+  
+  float menuSymbol2DivX = menuDivX + menuDivWidth * 1/4;
+  float menuSymbol2DivY = menuDivY + menuDivHeight * 3.5/8;
+  float menuSymbol2DivWidth = menuDivWidth * 1/2;
+  float menuSymbol2DivHeight = menuDivHeight * 1/8;
+  rect(menuSymbol2DivX, menuSymbol2DivY, menuSymbol2DivWidth, menuSymbol2DivHeight);
+  
+  float menuSymbol3DivX = menuDivX + menuDivWidth * 1/4;
+  float menuSymbol3DivY = menuDivY + menuDivHeight * 5.5/8;
+  float menuSymbol3DivWidth = menuDivWidth * 1/2;
+  float menuSymbol3DivHeight = menuDivHeight * 1/8;
+  rect(menuSymbol3DivX, menuSymbol3DivY, menuSymbol3DivWidth, menuSymbol3DivHeight);
 
 float optionsDivX = appWidth * 725 / paperWidth;
 float optionsDivY = appHeight * 50 / paperHeight;
@@ -38,6 +55,17 @@ float exitDivY = appHeight * 50 / paperHeight;
 float exitDivWidth = appWidth * 50 / paperWidth;
 float exitDivHeight = appHeight * 140 / paperHeight;
 rect(exitDivX, exitDivY, exitDivWidth, exitDivHeight);
+  float exitSymbol1DivX1 = exitDivX + exitDivWidth * 1/4;
+  float exitSymbol1DivY1 = exitDivY + exitDivHeight * 1/4;
+  float exitSymbol1DivX2 = exitDivX + exitDivWidth * 3/4;
+  float exitSymbol1DivY2 = exitDivY + exitDivHeight * 3/4;
+  line(exitSymbol1DivX1, exitSymbol1DivY1, exitSymbol1DivX2, exitSymbol1DivY2);
+  
+  float exitSymbol2DivX1 = exitDivX + exitDivWidth * 3/4;
+  float exitSymbol2DivY1 = exitDivY + exitDivHeight * 1/4;
+  float exitSymbol2DivX2 = exitDivX + exitDivWidth * 1/4;
+  float exitSymbol2DivY2 = exitDivY + exitDivHeight * 3/4;
+  line(exitSymbol2DivX1, exitSymbol2DivY1, exitSymbol2DivX2, exitSymbol2DivY2);
 
 float authorDivX = appWidth * 350 / paperWidth;
 float authorDivY = appHeight * 186 / paperHeight;
@@ -80,13 +108,83 @@ float redoDivY = appHeight * 825 / paperHeight;
 float redoDivWidth = appWidth * 50 / paperWidth;
 float redoDivHeight = appHeight * 140 / paperHeight;
 rect(redoDivX, redoDivY, redoDivWidth, redoDivHeight);
+  float redoSymbol1DivX1 = redoDivX + redoDivWidth * 1/4;
+  float redoSymbol1DivY1 = redoDivY + redoDivHeight * 3/4;
+  float redoSymbol1DivX2 = redoDivX + redoDivWidth * 1/4;
+  float redoSymbol1DivY2 = redoDivY + redoDivHeight * 1/4;
+  line(redoSymbol1DivX1, redoSymbol1DivY1, redoSymbol1DivX2, redoSymbol1DivY2);
+  
+  float redoSymbol2DivX1 = redoDivX + redoDivWidth * 1/4;
+  float redoSymbol2DivY1 = redoDivY + redoDivHeight * 1/4;
+  float redoSymbol2DivX2 = redoDivX + redoDivWidth * 3/4;
+  float redoSymbol2DivY2 = redoDivY + redoDivHeight * 1/4;
+  line(redoSymbol2DivX1, redoSymbol2DivY1, redoSymbol2DivX2, redoSymbol2DivY2);
+  
+  float redoSymbol3DivX1 = redoDivX + redoDivWidth * 1/4;
+  float redoSymbol3DivY1 = redoDivY + redoDivHeight * 3/4;
+  float redoSymbol3DivX2 = redoDivX + redoDivWidth * 3/4;
+  float redoSymbol3DivY2 = redoDivY + redoDivHeight * 3/4;
+  line(redoSymbol3DivX1, redoSymbol3DivY1, redoSymbol3DivX2, redoSymbol3DivY2);
+  
+  float redoSymbol4DivX1 = redoDivX + redoDivWidth * 3/4;
+  float redoSymbol4DivY1 = redoDivY + redoDivHeight * 1/4;
+  float redoSymbol4DivX2 = redoDivX + redoDivWidth * 3/4;
+  float redoSymbol4DivY2 = redoDivY + redoDivHeight * 1/2;
+  line(redoSymbol4DivX1, redoSymbol4DivY1, redoSymbol4DivX2, redoSymbol4DivY2);
+  
+  float redoSymbol5DivX1 = redoDivX + redoDivWidth * 11/16;
+  float redoSymbol5DivY1 = redoDivY + redoDivHeight * 1/2;
+  float redoSymbol5DivX2 = redoDivX + redoDivWidth * 13/16;
+  float redoSymbol5DivY2 = redoDivY + redoDivHeight * 1/2;
+  float redoSymbol5DivX3 = redoDivX + redoDivWidth * 3/4;
+  float redoSymbol5DivY3 = redoDivY + redoDivHeight * 5/8;
+  triangle(redoSymbol5DivX1, redoSymbol5DivY1, redoSymbol5DivX2, redoSymbol5DivY2, redoSymbol5DivX3, redoSymbol5DivY3);
 
 float loopDivX = appWidth * 670 / paperWidth;
 float loopDivY = appHeight * 825 / paperHeight;
 float loopDivWidth = appWidth * 50 / paperWidth;
 float loopDivHeight = appHeight * 140 / paperHeight;
 rect(loopDivX, loopDivY, loopDivWidth, loopDivHeight);
-
+  float loopSymbol1DivX1 = loopDivX + loopDivWidth * 1/4;
+  float loopSymbol1DivY1 = loopDivY + loopDivHeight * 3/4;
+  float loopSymbol1DivX2 = loopDivX + loopDivWidth * 1/4;
+  float loopSymbol1DivY2 = loopDivY + loopDivHeight * 1/2;
+  line(loopSymbol1DivX1, loopSymbol1DivY1, loopSymbol1DivX2, loopSymbol1DivY2);
+  
+  float loopSymbol2DivX1 = loopDivX + loopDivWidth * 1/4;
+  float loopSymbol2DivY1 = loopDivY + loopDivHeight * 1/4;
+  float loopSymbol2DivX2 = loopDivX + loopDivWidth * 3/4;
+  float loopSymbol2DivY2 = loopDivY + loopDivHeight * 1/4;
+  line(loopSymbol2DivX1, loopSymbol2DivY1, loopSymbol2DivX2, loopSymbol2DivY2);
+  
+  float loopSymbol3DivX1 = loopDivX + loopDivWidth * 3/4;
+  float loopSymbol3DivY1 = loopDivY + loopDivHeight * 1/4;
+  float loopSymbol3DivX2 = loopDivX + loopDivWidth * 3/4;
+  float loopSymbol3DivY2 = loopDivY + loopDivHeight * 1/2;
+  line(loopSymbol3DivX1, loopSymbol3DivY1, loopSymbol3DivX2, loopSymbol3DivY2);
+  
+  float loopSymbol4DivX1 = loopDivX + loopDivWidth * 3/4;
+  float loopSymbol4DivY1 = loopDivY + loopDivHeight * 3/4;
+  float loopSymbol4DivX2 = loopDivX + loopDivWidth * 1/4;
+  float loopSymbol4DivY2 = loopDivY + loopDivHeight * 3/4;
+  line(loopSymbol4DivX1, loopSymbol4DivY1, loopSymbol4DivX2, loopSymbol4DivY2);
+  
+  float loopSymbol5DivX1 = loopDivX + loopDivWidth * 3/16;
+  float loopSymbol5DivY1 = loopDivY + loopDivHeight * 1/2;
+  float loopSymbol5DivX2 = loopDivX + loopDivWidth * 5.25/16;
+  float loopSymbol5DivY2 = loopDivY + loopDivHeight * 1/2;
+  float loopSymbol5DivX3 = loopDivX + loopDivWidth * 1/4;
+  float loopSymbol5DivY3 = loopDivY + loopDivHeight * 3/8;
+  triangle(loopSymbol5DivX1, loopSymbol5DivY1, loopSymbol5DivX2, loopSymbol5DivY2, loopSymbol5DivX3, loopSymbol5DivY3);
+  
+  float loopSymbol6DivX1 = loopDivX + loopDivWidth * 11/16;
+  float loopSymbol6DivY1 = loopDivY + loopDivHeight * 1/2;
+  float loopSymbol6DivX2 = loopDivX + loopDivWidth * 13/16;
+  float loopSymbol6DivY2 = loopDivY + loopDivHeight * 1/2;
+  float loopSymbol6DivX3 = loopDivX + loopDivWidth * 3/4;
+  float loopSymbol6DivY3 = loopDivY + loopDivHeight * 5/8;
+  triangle(loopSymbol6DivX1, loopSymbol6DivY1, loopSymbol6DivX2, loopSymbol6DivY2, loopSymbol6DivX3, loopSymbol6DivY3);
+  
 float prevDivX = appWidth * 275 / paperWidth;
 float prevDivY = appHeight * 1000 / paperHeight;
 float prevDivWidth = appWidth * 50 / paperWidth;
