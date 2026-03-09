@@ -1,1 +1,8 @@
-println("Hello World!");
+//
+print("H");
+print("e");
+print("l");
+print("l");
+print("o");
+//
+println(" World!");
