@@ -7,12 +7,16 @@ fullScreen();
 String upArow = "../../";
 String dependanciesFolder = "Dependencies";
 String imageFolder = "Images";
-String imageName = "Mona-Lisa-67";
-String fileExension = ".jpg"
+String imageName = "Orange";
+String fileExension = ".jpg";
 String open = "/";
 //
 //Concatenation
-//See C:\Users\z.osman4\Documents\GitHub\MusicPlayer222026.github.io\Dependencies\Images
-String pathway = 
+//See Absolute Pathway C:\Users\z.osman4\Documents\GitHub\MusicPlayer222026.github.io\Dependencies\Images
+//See Relative Pathway Dependencies\Images
+String pathway = upArow + open + upArow + open + dependanciesFolder + open + imageFolder + open + imageName + fileExension;
 //
-PImage image1 = loadImage(  );
+print(pathway);
+PImage image1 = loadImage(pathway);
+//
+image(image1, 0, 0);
