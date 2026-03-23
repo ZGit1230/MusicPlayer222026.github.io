@@ -48,12 +48,17 @@ float image1DivHeight = appHeight * 1/6; //1+1.5=2.5, half of the total height
 float image2AspectRation_GreatOne = (imageWidth2 > imageHeight2) ? float(imageWidth2) / float(imageHeight2): float(imageHeight2) / float(imageWidth2);
 println(image2AspectRation_GreatOne);
 float imageWidthAdjusted2 = image1DivWidth;
-float imageHeightAdjusted2 = (imageWidth2 >= image1DivWidth) ? imageWidthAdjusted2 / image2AspectRation_GreatOne : imageWidthAdjusted2 * image2AspectRation_GreatOne;
+float imageHeightAdjusted1 = (imageWidth2 >= image1DivWidth) ? imageWidthAdjusted2 / image2AspectRation_GreatOne : imageWidthAdjusted2 * image2AspectRation_GreatOne;
 
-rect(image1DivX, image1DivY, imageWidthAdjusted2, imageHeightAdjusted2);
+while (imageWidthAdjusted2 > image1DivWidth) {
+  imageWidthAdjusted2 *= 0.99;
+  imageHeightAdjusted1 = imageWidthAdjusted2 / image2AspectRation_GreatOne;
+};
+
+rect(image1DivX, image1DivY, image1DivWidth, image1DivHeight);
 
 //DIV: Image
 //
-image(image1, image1DivX, image1DivY, image1DivWidth, image1DivHeight);
+image(image1, image1DivX, image1DivY, imageWidthAdjusted2, imageHeightAdjusted1);
 //image(image2, image1DivX, image1DivY);
 //image(image3, 0, 0);
