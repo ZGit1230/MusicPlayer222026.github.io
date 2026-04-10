@@ -70,11 +70,6 @@ if ( imageWidth2 > image1DivWidth) {
 
 println(image1AspectRation_GreatOne);
 
-while (imageWidthAdjusted1 > image1DivWidth) {
-  imageWidthAdjusted1 *= 0.99 ;
-  imageHeightAdjusted1 = imageWidthAdjusted1 / image1AspectRation_GreatOne;
-};
-
 rect(image1DivX, image1DivY, image1DivWidth, image1DivHeight);
 
 //DIV: Image
