@@ -36,7 +36,7 @@ float maxTimeDivWidth = appWidth * 75 / paperWidth;
 float maxTimeDivHeight = appHeight * 50 / paperHeight;
 rect(maxTimeDivX, maxTimeDivY, maxTimeDivWidth, maxTimeDivHeight);
 
-String title = "Glen Quagmire";
+String title = "Label";
 
 // Fonts from OS
 
@@ -45,17 +45,25 @@ String[] fontList = PFont.list(); // Lists all fonts avalible on the system
 printArray(fontList); // Lists all possible fonts to chose, the createFont
 // Tools > Create Font > Find Font > Do NOT press ok, known conflict between loadFont() and createFont()
 
-float fontSize = appHeight;
-println(fontSize);
+float fontSize1 = appHeight;
+float fontSize2 = appHeight;
+float fontSize3 = appHeight;
+float fontSize4 = appHeight;
+
+println(fontSize1);
 PFont font;
 String nirmalaUIBold = "Nirmala UI Bold";
-font = createFont(nirmalaUIBold, fontSize);
+font = createFont(nirmalaUIBold, fontSize1);
 
 float fontSizeNirmalaUIBold = 30;
 float divHeightNirmalaUIBold = authorDivHeight;
 float nirmalaUIBoldAspectRatio = fontSizeNirmalaUIBold / divHeightNirmalaUIBold; // <1
-fontSize = authorDivWidth * nirmalaUIBoldAspectRatio;
-println(fontSize);
+float textAdjustment = 0.9;
+fontSize1 = authorDivHeight * nirmalaUIBoldAspectRatio * textAdjustment;
+fontSize2 = nameDivHeight * nirmalaUIBoldAspectRatio * textAdjustment;
+fontSize3 = timerDivHeight * nirmalaUIBoldAspectRatio * textAdjustment;
+fontSize4 = maxTimeDivHeight * nirmalaUIBoldAspectRatio * textAdjustment;
+println(fontSize1);
 
 color blackInk = #000000;
 color whiteInk = #FFFFFF;
@@ -63,8 +71,23 @@ color resetInk = whiteInk;
 
 fill(blackInk);
 
-textFont(font, fontSize);
+textAlign(CENTER, TOP);
+textFont(font, fontSize1);
+while (textWidth(title) > authorDivWidth) {
+  print("Hello1");
+};
 text(title, authorDivX, authorDivY, authorDivWidth, authorDivHeight);
+textFont(font, fontSize2);
+//while (textWidth(title) > authorDivWidth) (print("Hello2");
+text(title, nameDivX, nameDivY, nameDivWidth, nameDivHeight);
+textFont(font, fontSize3);
+//while (textWidth(title) > authorDivWidth) (print("Hello3");
+text(title, timerDivX, timerDivY, timerDivWidth, timerDivHeight);
+textFont(font, fontSize4);
+//while (textWidth(title) > authorDivWidth) (print("Hello4");
+text(title, maxTimeDivX, maxTimeDivY, maxTimeDivWidth, maxTimeDivHeight);
+
+fill(resetInk);
 
 //Strings, Text, Literal
 //
