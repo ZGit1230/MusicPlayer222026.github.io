@@ -36,7 +36,7 @@ float maxTimeDivWidth = appWidth * 75 / paperWidth;
 float maxTimeDivHeight = appHeight * 50 / paperHeight;
 rect(maxTimeDivX, maxTimeDivY, maxTimeDivWidth, maxTimeDivHeight);
 
-String title = "Label";
+String title = "This is a Label.";
 
 // Fonts from OS
 
@@ -71,19 +71,64 @@ color resetInk = whiteInk;
 
 fill(blackInk);
 
+float constantDecrease = 0.99;
+int iWhile = 0;
 textAlign(CENTER, TOP);
 textFont(font, fontSize1);
 while (textWidth(title) > authorDivWidth) {
-  print("Hello1");
+  //print("Hello1"); Scary Larry infinity loop oh no scary oh ow oww
+  iWhile++;
+  if (iWhile>1000) {
+    println("Infinite WHILE loop");
+    exit();
+  }
+  fontSize1 *= 0.99;
+  textFont(font, fontSize1);
 };
 text(title, authorDivX, authorDivY, authorDivWidth, authorDivHeight);
+
 textFont(font, fontSize2);
+iWhile = 0;
+while (textWidth(title) > nameDivWidth) {
+  //print("Hello1"); Scary Larry infinity loop oh no scary oh ow oww
+  iWhile++;
+  if (iWhile>1000) {
+    println("Infinite WHILE loop");
+    exit();
+  }
+  fontSize2 *= 0.99;
+  textFont(font, fontSize2);
+};
 //while (textWidth(title) > authorDivWidth) (print("Hello2");
 text(title, nameDivX, nameDivY, nameDivWidth, nameDivHeight);
+
 textFont(font, fontSize3);
+iWhile = 0;
+while (textWidth(title) > timerDivWidth) {
+  //print("Hello1"); Scary Larry infinity loop oh no scary oh ow oww
+  iWhile++;
+  if (iWhile>1000) {
+    println("Infinite WHILE loop");
+    exit();
+  }
+  fontSize3 *= 0.99;
+  textFont(font, fontSize3);
+};
 //while (textWidth(title) > authorDivWidth) (print("Hello3");
 text(title, timerDivX, timerDivY, timerDivWidth, timerDivHeight);
+
 textFont(font, fontSize4);
+iWhile = 0;
+while (textWidth(title) > maxTimeDivWidth) {
+  //print("Hello1"); Scary Larry infinity loop oh no scary oh ow oww
+  iWhile++;
+  if (iWhile>1000) {
+    println("Infinite WHILE loop");
+    exit();
+  }
+  fontSize4 *= 0.99;
+  textFont(font, fontSize4);
+};
 //while (textWidth(title) > authorDivWidth) (print("Hello4");
 text(title, maxTimeDivX, maxTimeDivY, maxTimeDivWidth, maxTimeDivHeight);
 
