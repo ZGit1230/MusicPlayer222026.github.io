@@ -28,28 +28,41 @@ void setup() {
   
   String[] songName = new String[numberOfSongs];
   songName[0] = "Beat_Your_Competition";
+  currentSong++;
   songName[1] = "Cycles";
+  currentSong++;
   songName[2] = "Start_Your_Engines";
+  currentSong = 0;
   
-  String songName1 = "Beat_Your_Competition";
+  //String songName1 = "Beat_Your_Competition";
   String soundEffect1 = "The_Simplest_Sting";
   String fileExtension_mp3 = ".mp3";
   
   String musicDirectory = upArrow + open + upArrow + open + dependanciesFolder + open + musicFolder + open;
   String soundEffectsDirectory = upArrow + open + upArrow + open + dependanciesFolder + open + soundEffectsFolder + open;
-  String file = musicDirectory + songName1 + fileExtension_mp3;
-  playList[currentSong] = minim.loadFile(file);
-  file = soundEffectsDirectory + soundEffect1 + fileExtension_mp3;
-  soundEffects[currentSong] = minim.loadFile(file);
+  String pathway;
   
-  if ( playList[currentSong] == null || soundEffects[currentSong] == null ) { // Error
-    println("The Playlist or Sound Effects did not load properly");
+  for (int i=0; i<numberOfSongs; i++) {
+    pathway = musicDirectory + songName[i] + fileExtension_mp3;
+    playList[currentSong] = minim.loadFile(pathway);
+  };
+  
+  pathway = soundEffectsDirectory + soundEffect1 + fileExtension_mp3;
+  soundEffects[currentSong] = minim.loadFile(pathway);
+  
+  for (int i=0; i<numberOfSongs; i++) {
+    if ( playList[i] == null || soundEffects[currentSong] == null ) { // Error
+    println("The Playlist did not load properly");
     printArray(playList);
+    exit();
+}
+  };
+  
+if ( playList[currentSong] == null || soundEffects[currentSong] == null ) { // Error
+    println("The Sound Effects did not load properly");
     printArray(soundEffects);
-  } else {
-    playList[currentSong].loop();
-    printArray(playList);
-    }
+    exit();
+}
 }
 
 void draw () {}//End Draw
