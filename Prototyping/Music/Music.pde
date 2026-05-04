@@ -20,15 +20,30 @@ AudioPlayer[] soundEffects = new AudioPlayer[numberOfSoundEffect];
 int currentSong = numberOfSongs - numberOfSongs;
 //
 
+float nameDivX, nameDivY, nameDivWidth, nameDivHeight;
+color blackInk, resetInk;
+float constantDecrease;
+int iWhile;
+float fontSize1, fontSize2, fontSize3;
+PFont font;
+
 void setup() {
   size( 700, 500 );
   int appWidth = width; 
   int appHeight = height;
   
+  int numberOfButtons = 10; //Half a button on either side as space, Center Button is Play
+  int widthOfButton = appWidth/numberOfButtons;
+  int beginningButtonSpace = widthOfButton;
+  float quitX = appWidth - appHeight*1/20;
+  float quitY = 0;
+  float quitWidth = appHeight*1/20;
+  float quitHeight = appHeight*1/20;
+  
   minim = new Minim(this);
   String upArrow = "..";
   String open = "/";
-  String musicFolder = "Music";
+  String musicFolder = "MusicSongs";
   String soundEffectsFolder = "SoundEffects";
   String dependanciesFolder = "Dependencies";
   
@@ -44,10 +59,10 @@ void setup() {
   float authorDivHeight = appHeight * 50 / paperHeight;
   rect(authorDivX, authorDivY, authorDivWidth, authorDivHeight);
   
-  float nameDivX = appWidth * 335 / paperWidth;
-  float nameDivY = appHeight * 235 / paperHeight;
-  float nameDivWidth = appWidth * 130 / paperWidth;
-  float nameDivHeight = appHeight * 70 / paperHeight;
+  nameDivX = appWidth * 335 / paperWidth;
+  nameDivY = appHeight * 235 / paperHeight;
+  nameDivWidth = appWidth * 130 / paperWidth;
+  nameDivHeight = appHeight * 70 / paperHeight;
   rect(nameDivX, nameDivY, nameDivWidth, nameDivHeight);
   
   float timerDivX = appWidth * 150 / paperWidth;
@@ -110,11 +125,10 @@ float fontSize3 = appHeight;
 float fontSize4 = appHeight;
 
 println(fontSize1);
-PFont font;
 String nirmalaUIBold = "Nirmala UI Bold";
 font = createFont(nirmalaUIBold, fontSize1);
 
-color blackInk = #000000;
+blackInk = #000000;
 color whiteInk = #FFFFFF;
 color resetInk = whiteInk;
 
@@ -131,17 +145,39 @@ while (textWidth(playListMetaData[currentSong].title()) > authorDivWidth) {
     println("Infinite WHILE loop");
     exit();
   }
-  fontSize1 *= 0.99;
+  fontSize1 *= constantDecrease;
   textFont(font, fontSize1);
 };
-text(playListMetaData[currentSong].title(), nameDivX, nameDivY, nameDivWidth, nameDivHeight);
-
+fill(resetInk);
 }
 
-void draw () {}//End Draw
+void draw () {//End Draw
+  rect(nameDivX, nameDivY, nameDivWidth, nameDivHeight);
+  fontSize1 = nameDivHeight;
+  constantDecrease = 0.99;
+  iWhile=0;
+  textFont(font, fontSize1);
+  while (textWidth(playListMetaData[currentSong].title()) > nameDivWidth ) {
+    
+    iWhile++;
+    if ( iWhile>10000 ) {
+      println("Infninte WHILE Loop");
+      exit();
+    }
+    fontSize1 *= constantDecrease;
+    textFont(font, fontSize1);
+  }
+  fill(blackInk);
+  text( playListMetaData[currentSong].title(), nameDivX, nameDivY, nameDivWidth, nameDivHeight );
+  fill(resetInk); //
+}
 
 void mousePressed() {
-/* Simple Play
+
+}//End mousePressed
+
+void keyPressed() {
+  /* Simple Play
    playList[currentSong].play();
    currentSong++;
    */
@@ -265,6 +301,4 @@ void mousePressed() {
    - need to have basic GUI complete first
    */
   //
-}//End mousePressed
-
-void keyPressed() {} //End keyPressed
+} //End keyPressed
