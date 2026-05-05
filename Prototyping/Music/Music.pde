@@ -134,11 +134,13 @@ color resetInk = whiteInk;
 
 fill(blackInk);
 
+textAlign(CENTER, CENTER);
+
 float constantDecrease = 0.99;
 int iWhile=0;
 textAlign(CENTER, TOP);
 textFont(font, fontSize1);
-while (textWidth(playListMetaData[currentSong].title()) > authorDivWidth) {
+while (textWidth(playListMetaData[currentSong].title()) > nameDivWidth) {
   //print("Hello1"); Scary Larry infinity loop oh no scary oh ow oww
   iWhile++;
   if (iWhile>1000) {
@@ -147,7 +149,8 @@ while (textWidth(playListMetaData[currentSong].title()) > authorDivWidth) {
   }
   fontSize1 *= constantDecrease;
   textFont(font, fontSize1);
-};
+}
+text( playListMetaData[currentSong].title(), nameDivX, nameDivY, nameDivWidth, nameDivHeight );
 fill(resetInk);
 }
 
@@ -168,8 +171,9 @@ void draw () {//End Draw
     fontSize1 *= constantDecrease;
     textFont(font, fontSize1);
   }
-  fill(resetInk);
+  fill(blackInk);
   text( playListMetaData[currentSong].title(), nameDivX, nameDivY, nameDivWidth, nameDivHeight );
+  fill(resetInk);
 }
 
 void mousePressed() {
