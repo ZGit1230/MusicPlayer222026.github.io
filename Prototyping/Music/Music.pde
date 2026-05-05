@@ -152,6 +152,7 @@ fill(resetInk);
 }
 
 void draw () {//End Draw
+  noFill();
   rect(nameDivX, nameDivY, nameDivWidth, nameDivHeight);
   fontSize1 = nameDivHeight;
   constantDecrease = 0.99;
@@ -167,9 +168,8 @@ void draw () {//End Draw
     fontSize1 *= constantDecrease;
     textFont(font, fontSize1);
   }
-  fill(blackInk);
+  fill(resetInk);
   text( playListMetaData[currentSong].title(), nameDivX, nameDivY, nameDivWidth, nameDivHeight );
-  fill(resetInk); //
 }
 
 void mousePressed() {
