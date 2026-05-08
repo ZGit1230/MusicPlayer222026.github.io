@@ -29,9 +29,9 @@ PFont font;
 
 void setup() {
   size( 700, 500 );
-  int appWidth = width; 
+  int appWidth = width;
   int appHeight = height;
-  
+
   int numberOfButtons = 10; //Half a button on either side as space, Center Button is Play
   int widthOfButton = appWidth/numberOfButtons;
   int beginningButtonSpace = widthOfButton;
@@ -39,44 +39,44 @@ void setup() {
   float quitY = 0;
   float quitWidth = appHeight*1/20;
   float quitHeight = appHeight*1/20;
-  
+
   minim = new Minim(this);
   String upArrow = "..";
   String open = "/";
   String musicFolder = "MusicSongs";
   String soundEffectsFolder = "SoundEffects";
   String dependanciesFolder = "Dependencies";
-  
+
   int paperWidth = 800;
   int paperHeight = 1300;
   //
-  
+
   // DIV: Image
-  
+
   float authorDivX = appWidth * 350 / paperWidth;
   float authorDivY = appHeight * 186 / paperHeight;
   float authorDivWidth = appWidth * 100 / paperWidth;
   float authorDivHeight = appHeight * 50 / paperHeight;
   rect(authorDivX, authorDivY, authorDivWidth, authorDivHeight);
-  
+
   nameDivX = appWidth * 335 / paperWidth;
   nameDivY = appHeight * 235 / paperHeight;
   nameDivWidth = appWidth * 130 / paperWidth;
   nameDivHeight = appHeight * 70 / paperHeight;
   rect(nameDivX, nameDivY, nameDivWidth, nameDivHeight);
-  
+
   float timerDivX = appWidth * 150 / paperWidth;
   float timerDivY = appHeight * 880 / paperHeight;
   float timerDivWidth = appWidth * 75 / paperWidth;
   float timerDivHeight = appHeight * 50 / paperHeight;
   rect(timerDivX, timerDivY, timerDivWidth, timerDivHeight);
-  
+
   float maxTimeDivX = appWidth * 575 / paperWidth;
   float maxTimeDivY = appHeight * 880 / paperHeight;
   float maxTimeDivWidth = appWidth * 75 / paperWidth;
   float maxTimeDivHeight = appHeight * 50 / paperHeight;
   rect(maxTimeDivX, maxTimeDivY, maxTimeDivWidth, maxTimeDivHeight);
-  
+
   String[] songName = new String[numberOfSongs];
   songName[currentSong] = "Beat_Your_Competition";
   currentSong++;
@@ -84,85 +84,84 @@ void setup() {
   currentSong++;
   songName[currentSong] = "Start_Your_Engines";
   currentSong = 0;
-  
+
   //String songName1 = "Beat_Your_Competition";
   String soundEffect1 = "The_Simplest_Sting";
   String fileExtension_mp3 = ".mp3";
-  
+
   String musicDirectory = upArrow + open + upArrow + open + dependanciesFolder + open + musicFolder + open;
   String soundEffectsDirectory = upArrow + open + upArrow + open + dependanciesFolder + open + soundEffectsFolder + open;
   String pathway;
-  
+
   for (int i=0; i<numberOfSongs; i++) {
     pathway = musicDirectory + songName[i] + fileExtension_mp3;
     println("Insdei FOR, pathway:", pathway);
     playList[i] = minim.loadFile(pathway);
     playListMetaData[i] = playList[i].getMetaData();
   };
-  
+
   pathway = soundEffectsDirectory + soundEffect1 + fileExtension_mp3;
   soundEffects[currentSong] = minim.loadFile(pathway);
-  
+
   for (int i=0; i<numberOfSongs; i++) {
     if ( playList[i] == null || soundEffects[currentSong] == null ) { // Error
-    println("The Playlist did not load properly");
-    printArray(playList);
-    exit();
-}
+      println("The Playlist did not load properly");
+      printArray(playList);
+      exit();
+    }
   };
-  
-if ( playList[currentSong] == null || soundEffects[currentSong] == null ) { // Error
+
+  if ( playList[currentSong] == null || soundEffects[currentSong] == null ) { // Error
     println("The Sound Effects did not load properly");
     printArray(soundEffects);
     exit();
-}
-
-String title = "X";
-
-float fontSize1 = nameDivHeight;
-float fontSize2 = appHeight;
-float fontSize3 = appHeight;
-float fontSize4 = appHeight;
-
-println(fontSize1);
-String nirmalaUIBold = "Nirmala UI Bold";
-font = createFont(nirmalaUIBold, fontSize1);
-
-blackInk = #000000;
-color whiteInk = #FFFFFF;
-color resetInk = whiteInk;
-
-fill(blackInk);
-
-textAlign(CENTER, CENTER);
-
-float constantDecrease = 0.99;
-int iWhile=0;
-textAlign(CENTER, TOP);
-textFont(font, fontSize1);
-while (textWidth(playListMetaData[currentSong].title()) > nameDivWidth) {
-  //print("Hello1"); Scary Larry infinity loop oh no scary oh ow oww
-  iWhile++;
-  if (iWhile>1000) {
-    println("Infinite WHILE loop");
-    exit();
   }
-  fontSize1 *= constantDecrease;
+
+  String title = "X";
+
+  float fontSize1 = nameDivHeight;
+  float fontSize2 = appHeight;
+  float fontSize3 = appHeight;
+  float fontSize4 = appHeight;
+
+  println(fontSize1);
+  String nirmalaUIBold = "Nirmala UI Bold";
+  font = createFont(nirmalaUIBold, fontSize1);
+
+  blackInk = #000000;
+  color whiteInk = #FFFFFF;
+  resetInk = whiteInk;
+
+  fill(blackInk);
+
+  textAlign(CENTER, CENTER);
+
+  float constantDecrease = 0.99;
+  int iWhile=0;
+  textAlign(CENTER, CENTER);
   textFont(font, fontSize1);
-}
-text( playListMetaData[currentSong].title(), nameDivX, nameDivY, nameDivWidth, nameDivHeight );
-fill(resetInk);
+  while (textWidth(playListMetaData[currentSong].title()) > nameDivWidth) {
+    //print("Hello1"); Scary Larry infinity loop oh no scary oh ow oww
+    iWhile++;
+    if (iWhile>1000) {
+      println("Infinite WHILE loop");
+      exit();
+    }
+    fontSize1 *= constantDecrease;
+    textFont(font, fontSize1);
+  }
+  text( playListMetaData[currentSong].title(), nameDivX, nameDivY, nameDivWidth, nameDivHeight );
+  fill(resetInk);
 }
 
-void draw () {//End Draw
-  noFill();
+void draw () {
   rect(nameDivX, nameDivY, nameDivWidth, nameDivHeight);
   fontSize1 = nameDivHeight;
   constantDecrease = 0.99;
   iWhile=0;
   textFont(font, fontSize1);
   while (textWidth(playListMetaData[currentSong].title()) > nameDivWidth ) {
-    
+
     iWhile++;
     if ( iWhile>10000 ) {
       println("Infninte WHILE Loop");
@@ -177,7 +176,6 @@ void draw () {//End Draw
 }
 
 void mousePressed() {
-
 }//End mousePressed
 
 void keyPressed() {
