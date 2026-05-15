@@ -366,13 +366,10 @@ void setup() { // Start Setup
     
     //
     //Population: DIVs
-    int numberOfButtons = 10; //Half a button on either side as space, Center Button is Play
-    int widthOfButton = appWidth/numberOfButtons;
-    int beginningButtonSpace = widthOfButton;
-    float image1DivX = beginningButtonSpace;
-    float image1DivY = appHeight * 10/200;
-    float image1DivWidth = appWidth * 1/4 - beginningButtonSpace * 0.25;
-    float image1DivHeight = appHeight * 1.5/5; //1+1.5=2.5, half of the total height
+    float image1DivX = appWidth * 300 / paperWidth;
+    float image1DivY = appHeight * 305 / paperHeight;
+    float image1DivWidth = imageWidth1;
+    float image1DivHeight = imageHeight1; //1+1.5=2.5, half of the total height
     
     //Image: Aspect Ratio Algorithm
     //Ternary Operator for Aspect Ratio
