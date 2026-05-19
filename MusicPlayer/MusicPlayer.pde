@@ -337,6 +337,8 @@ void setup() { // Start Setup
       triangle(nextSymbol1DivX1, nextSymbol1DivY1, nextSymbol1DivX2, nextSymbol1DivY2, nextSymbol1DivX3, nextSymbol1DivY3);
       rect(nextSymbol2DivX, nextSymbol2DivY, nextSymbol2DivWidth, nextSymbol2DivHeight);
       
+    // Images  
+      
     String upArow = "..";
     String dependanciesFolder = "Dependencies";
     String imagesFolder = "Images";
@@ -404,6 +406,114 @@ void setup() { // Start Setup
     image(image1, image1DivX, image1DivY, imageWidthAdjusted1, imageHeightAdjusted1);
     //image(image2, image1DivX, image1DivY);
     //image(image3, 0, 0);
+    
+    
+   // Text
+   
+   String title = "Label";
+   
+   String[] fontList = PFont.list();
+   
+   float fontSize1 = appHeight;
+    float fontSize2 = appHeight;
+    float fontSize3 = appHeight;
+    float fontSize4 = appHeight;
+    
+    println(fontSize1);
+    PFont font;
+    String nirmalaUIBold = "Nirmala UI Bold";
+    font = createFont(nirmalaUIBold, fontSize1);
+    
+    float fontSizeNirmalaUIBold = 15;
+    float divHeightNirmalaUIBold = authorDivHeight;
+    float nirmalaUIBoldAspectRatio = fontSizeNirmalaUIBold / divHeightNirmalaUIBold; // <1
+    float textAdjustment = 0.9;
+    fontSize1 = authorDivHeight * nirmalaUIBoldAspectRatio * textAdjustment;
+    fontSize2 = nameDivHeight * nirmalaUIBoldAspectRatio * textAdjustment;
+    fontSize3 = timerDivHeight * nirmalaUIBoldAspectRatio * textAdjustment;
+    fontSize4 = maxTimeDivHeight * nirmalaUIBoldAspectRatio * textAdjustment;
+    println(fontSize1);
+    
+    color blackInk = #000000;
+    color whiteInk = #FFFFFF;
+    color resetInk = whiteInk;
+    
+    fill(blackInk);
+    
+    float constantDecrease = 0.99;
+    int iWhile = 0;
+    textAlign(CENTER, TOP);
+    textFont(font, fontSize1);
+    while (textWidth(title) > authorDivWidth) {
+      //print("Hello1"); Scary Larry infinity loop oh no scary oh ow oww
+      iWhile++;
+      if (iWhile>1000) {
+        println("Infinite WHILE loop");
+        exit();
+      }
+      fontSize1 *= 0.99;
+      textFont(font, fontSize1);
+    };
+    text(title, authorDivX, authorDivY, authorDivWidth, authorDivHeight);
+    
+    textFont(font, fontSize2);
+    iWhile = 0;
+    while (textWidth(title) > nameDivWidth) {
+      //print("Hello1"); Scary Larry infinity loop oh no scary oh ow oww
+      iWhile++;
+      if (iWhile>1000) {
+        println("Infinite WHILE loop");
+        exit();
+      }
+      fontSize2 *= 0.99;
+      textFont(font, fontSize2);
+    };
+    //while (textWidth(title) > authorDivWidth) (print("Hello2");
+    text(title, nameDivX, nameDivY, nameDivWidth, nameDivHeight);
+    
+    textFont(font, fontSize3);
+    iWhile = 0;
+    while (textWidth(title) > timerDivWidth) {
+      //print("Hello1"); Scary Larry infinity loop oh no scary oh ow oww
+      iWhile++;
+      if (iWhile>1000) {
+        println("Infinite WHILE loop");
+        exit();
+      }
+      fontSize3 *= 0.99;
+      textFont(font, fontSize3);
+    };
+    //while (textWidth(title) > authorDivWidth) (print("Hello3");
+    text(title, timerDivX, timerDivY, timerDivWidth, timerDivHeight);
+    
+    textFont(font, fontSize4);
+    iWhile = 0;
+    while (textWidth(title) > maxTimeDivWidth) {
+      //print("Hello1"); Scary Larry infinity loop oh no scary oh ow oww
+      iWhile++;
+      if (iWhile>1000) {
+        println("Infinite WHILE loop");
+        exit();
+      }
+      fontSize4 *= 0.99;
+      textFont(font, fontSize4);
+    };
+    //while (textWidth(title) > authorDivWidth) (print("Hello4");
+    text(title, maxTimeDivX, maxTimeDivY, maxTimeDivWidth, maxTimeDivHeight);
+    
+    fill(resetInk);
+    
+    //Strings, Text, Literal
+    //
+    // Fonts from OS
+    //
+    // Aspect Ratio for Harrington
+    //
+    // Drawing Text
+    //
+    
+    
+    // Music
       
 } // End Setup
 
