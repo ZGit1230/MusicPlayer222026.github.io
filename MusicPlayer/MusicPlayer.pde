@@ -17,6 +17,21 @@ import ddf.minim.ugens.*;
  */
 //
 
+Minim minim;
+int numberOfSongs = 3;
+int numberOfSoundEffect = 2;
+AudioPlayer[] playList = new AudioPlayer[numberOfSongs];
+AudioMetaData[] playListMetaData = new AudioMetaData[numberOfSongs];
+AudioPlayer[] soundEffects = new AudioPlayer[numberOfSoundEffect];
+int currentSong = numberOfSongs - numberOfSongs;
+
+float nameDivX, nameDivY, nameDivWidth, nameDivHeight;
+color blackInk, resetInk;
+float constantDecrease;
+int iWhile;
+float fontSize1, fontSize2, fontSize3, fontSize4;
+PFont font;
+
 void setup() { // Start Setup
   
   //Display
@@ -94,10 +109,10 @@ void setup() { // Start Setup
   float authorDivWidth = appWidth * 100 / paperWidth;
   float authorDivHeight = appHeight * 50 / paperHeight;
   
-  float nameDivX = appWidth * 335 / paperWidth;
-  float nameDivY = appHeight * 235 / paperHeight;
-  float nameDivWidth = appWidth * 130 / paperWidth;
-  float nameDivHeight = appHeight * 70 / paperHeight;
+  nameDivX = appWidth * 335 / paperWidth;
+  nameDivY = appHeight * 235 / paperHeight;
+  nameDivWidth = appWidth * 130 / paperWidth;
+  nameDivHeight = appHeight * 70 / paperHeight;
   
   float logoDivX = appWidth * 300 / paperWidth;
   float logoDivY = appHeight * 305 / paperHeight;
@@ -410,17 +425,17 @@ void setup() { // Start Setup
     
    // Text
    
-   String title = "Label";
+   String title = "X";
    
    String[] fontList = PFont.list();
    
-   float fontSize1 = appHeight;
-    float fontSize2 = appHeight;
-    float fontSize3 = appHeight;
-    float fontSize4 = appHeight;
+    fontSize1 = appHeight;
+    fontSize2 = appHeight;
+    fontSize3 = appHeight;
+    fontSize4 = appHeight;
     
     println(fontSize1);
-    PFont font;
+    
     String nirmalaUIBold = "Nirmala UI Bold";
     font = createFont(nirmalaUIBold, fontSize1);
     
@@ -436,25 +451,14 @@ void setup() { // Start Setup
     
     color blackInk = #000000;
     color whiteInk = #FFFFFF;
-    color resetInk = whiteInk;
+    int resetInk = whiteInk;
     
     fill(blackInk);
     
-    float constantDecrease = 0.99;
-    int iWhile = 0;
+    constantDecrease = 0.99;
+    iWhile = 0;
     textAlign(CENTER, TOP);
     textFont(font, fontSize1);
-    while (textWidth(title) > authorDivWidth) {
-      //print("Hello1"); Scary Larry infinity loop oh no scary oh ow oww
-      iWhile++;
-      if (iWhile>1000) {
-        println("Infinite WHILE loop");
-        exit();
-      }
-      fontSize1 *= 0.99;
-      textFont(font, fontSize1);
-    };
-    text(title, authorDivX, authorDivY, authorDivWidth, authorDivHeight);
     
     textFont(font, fontSize2);
     iWhile = 0;
@@ -514,11 +518,99 @@ void setup() { // Start Setup
     
     
     // Music
+    
+    Minim minim;
+    int numberOfSongs = 3;
+    int numberOfSoundEffect = 2;
+    AudioPlayer[] playList = new AudioPlayer[numberOfSongs];
+    AudioMetaData[] playListMetaData = new AudioMetaData[numberOfSongs];
+    AudioPlayer[] soundEffects = new AudioPlayer[numberOfSoundEffect];
+    int currentSong = numberOfSongs - numberOfSongs;
+    
+    minim = new Minim(this);
+    String upArrow = "..";
+    open = "/";
+    String musicFolder = "MusicSongs";
+    String soundEffectsFolder = "SoundEffects";
+    dependanciesFolder = "Dependencies";
+    
+    String[] songName = new String[numberOfSongs];
+    songName[currentSong] = "Beat_Your_Competition";
+    currentSong++;
+    songName[currentSong] = "Cycles";
+    currentSong++;
+    songName[currentSong] = "Start_Your_Engines";
+    currentSong = 0;
+    
+    String soundEffect1 = "The_Simplest_Sting";
+    String fileExtension_mp3 = ".mp3";
+
+    String musicDirectory = upArrow + open + dependanciesFolder + open + musicFolder + open;
+    String soundEffectsDirectory = upArrow + open + dependanciesFolder + open + soundEffectsFolder + open;
+    String pathway;
+    
+    for (int i=0; i<numberOfSongs; i++) {
+    pathway = musicDirectory + songName[i] + fileExtension_mp3;
+    println("Insdei FOR, pathway:", pathway);
+    playList[i] = minim.loadFile(pathway);
+    playListMetaData[i] = playList[i].getMetaData();
+  };
+
+  pathway = soundEffectsDirectory + soundEffect1 + fileExtension_mp3;
+  soundEffects[currentSong] = minim.loadFile(pathway);
+
+  for (int i=0; i<numberOfSongs; i++) {
+    if ( playList[i] == null || soundEffects[currentSong] == null ) { // Error
+      println("The Playlist did not load properly");
+      printArray(playList);
+      exit();
+    }
+  };
+
+  if ( playList[currentSong] == null || soundEffects[currentSong] == null ) { // Error
+    println("The Sound Effects did not load properly");
+    printArray(soundEffects);
+    exit();
+  }
+
+  while (textWidth(playListMetaData[currentSong].title()) > nameDivWidth) {
+    //print("Hello1"); Scary Larry infinity loop oh no scary oh ow oww
+    iWhile++;
+    if (iWhile>1000) {
+      println("Infinite WHILE loop");
+      exit();
+    }
+    fontSize1 *= constantDecrease;
+    textFont(font, fontSize1);
+  }
+  text( playListMetaData[currentSong].title(), nameDivX, nameDivY, nameDivWidth, nameDivHeight );
+  fill(resetInk);
+
       
 } // End Setup
 
 void draw() {
  //2D Music Symbol Changes: hoverover, activation. Boolean from mousePressed()
+ 
+ rect(nameDivX, nameDivY, nameDivWidth, nameDivHeight);
+  fontSize1 = nameDivHeight;
+  constantDecrease = 0.99;
+  iWhile=0;
+  textFont(font, fontSize1);
+  while (textWidth(playListMetaData[currentSong].title()) > nameDivWidth ) {
+
+    iWhile++;
+    if ( iWhile>10000 ) {
+      println("Infninte WHILE Loop");
+      exit();
+    }
+    fontSize1 *= constantDecrease;
+    textFont(font, fontSize1);
+  }
+  fill(blackInk);
+  text( playListMetaData[currentSong].title(), nameDivX, nameDivY, nameDivWidth, nameDivHeight );
+  fill(resetInk);
+ 
 } // End Draw
 
 void mousePressed() {
