@@ -443,8 +443,8 @@ void setup() { // Start Setup
   float divHeightNirmalaUIBold = authorDivHeight;
   float nirmalaUIBoldAspectRatio = fontSizeNirmalaUIBold / divHeightNirmalaUIBold; // <1
   float textAdjustment = 0.9;
-  fontSize1 = authorDivHeight * nirmalaUIBoldAspectRatio * textAdjustment;
-  fontSize2 = nameDivHeight * nirmalaUIBoldAspectRatio * textAdjustment;
+  fontSize1 = nameDivHeight * nirmalaUIBoldAspectRatio * textAdjustment;
+  fontSize2 = authorDivHeight * nirmalaUIBoldAspectRatio * textAdjustment;
   fontSize3 = timerDivHeight * nirmalaUIBoldAspectRatio * textAdjustment;
   fontSize4 = maxTimeDivHeight * nirmalaUIBoldAspectRatio * textAdjustment;
   println(fontSize1);
@@ -462,7 +462,7 @@ void setup() { // Start Setup
 
   textFont(font, fontSize2);
   iWhile = 0;
-  while (textWidth(title) > nameDivWidth) {
+  while (textWidth(title) > authorDivWidth) {
     //print("Hello1"); Scary Larry infinity loop oh no scary oh ow oww
     iWhile++;
     if (iWhile>1000) {
@@ -473,7 +473,7 @@ void setup() { // Start Setup
     textFont(font, fontSize2);
   };
   //while (textWidth(title) > authorDivWidth) (print("Hello2");
-  text(title, nameDivX, nameDivY, nameDivWidth, nameDivHeight);
+  text(title, authorDivX, authorDivY, authorDivWidth, authorDivHeight);
 
   textFont(font, fontSize3);
   iWhile = 0;
