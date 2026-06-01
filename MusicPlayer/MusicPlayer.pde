@@ -580,7 +580,7 @@ void setup() { // Start Setup
 } // End Setup
 
 void draw() {
-  rect(nameDivX, nameDivY, nameDivWidth, nameDivHeight);
+  //rect(nameDivX, nameDivY, nameDivWidth, nameDivHeight);
   fontSize1 = nameDivHeight;
   constantDecrease = 0.99;
   iWhile=0;
@@ -595,6 +595,8 @@ void draw() {
     fontSize1 *= constantDecrease;
     textFont(font, fontSize1);
   }
+
+  //rect(nameDivX, nameDivY, nameDivWidth, nameDivHeight);
   fill(blackInk);
   text(playListMetaData[currentSong].title(), nameDivX, nameDivY, nameDivWidth, nameDivHeight );
   fill(resetInk);
