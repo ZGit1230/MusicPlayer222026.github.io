@@ -451,7 +451,7 @@ void setup() { // Start Setup
 
   color blackInk = #000000;
   color whiteInk = #FFFFFF;
-  color resetInk = whiteInk;
+  resetInk = whiteInk;
 
   fill(blackInk);
 
@@ -580,7 +580,7 @@ void setup() { // Start Setup
 } // End Setup
 
 void draw() {
-  //rect(nameDivX, nameDivY, nameDivWidth, nameDivHeight);
+  //
   fontSize1 = nameDivHeight;
   constantDecrease = 0.99;
   iWhile=0;
@@ -595,8 +595,8 @@ void draw() {
     fontSize1 *= constantDecrease;
     textFont(font, fontSize1);
   }
-
-  //rect(nameDivX, nameDivY, nameDivWidth, nameDivHeight);
+  fill(resetInk);
+  rect(nameDivX, nameDivY, nameDivWidth, nameDivHeight);
   fill(blackInk);
   text(playListMetaData[currentSong].title(), nameDivX, nameDivY, nameDivWidth, nameDivHeight );
   fill(resetInk);
