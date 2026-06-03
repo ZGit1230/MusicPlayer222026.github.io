@@ -26,11 +26,14 @@ AudioPlayer[] soundEffects = new AudioPlayer[numberOfSoundEffect];
 int currentSong = numberOfSongs - numberOfSongs;
 
 float nameDivX, nameDivY, nameDivWidth, nameDivHeight;
+float playPauseDivX, playPauseDivY, playPauseDivWidth, playPauseDivHeight;
 color blackInk, resetInk;
 float constantDecrease;
 int iWhile;
 float fontSize1, fontSize2, fontSize3, fontSize4;
 PFont font;
+
+Boolean playButton=false;
 
 void setup() { // Start Setup
 
@@ -600,10 +603,30 @@ void draw() {
   fill(blackInk);
   text(playListMetaData[currentSong].title(), nameDivX, nameDivY, nameDivWidth, nameDivHeight );
   fill(resetInk);
+  
+  if ( mouseX>playPauseDivX && mouseX<playPauseDivX+playPauseDivWidth && mouseY>playPauseDivY && mouseY<playPauseDivY+playPauseDivHeight ) {
+    //println("Wahoo! I'm playing you");
+    playButton = true;
+  } else {
+    //print(" ");
+    playButton = false;
+  }//End Introduction of DRAW()
+  //
+  //Button HoverOver
+  //
 } // End Draw
 
 void mousePressed() {
   //2D Music Symbol Changes: sending Boolean to draw()
+  
+  //Music Play Functions
+  if ( playButton == true ) {
+    println("Play My Song");
+    playButton=false; //reset Boolean for draw()
+  } else {
+    println(" ");
+  }
+  
 } // End MousePressed
 
 void keyPressed() {
