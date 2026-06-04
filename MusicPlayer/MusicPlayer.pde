@@ -27,13 +27,17 @@ int currentSong = numberOfSongs - numberOfSongs;
 
 float nameDivX, nameDivY, nameDivWidth, nameDivHeight;
 float playPauseDivX, playPauseDivY, playPauseDivWidth, playPauseDivHeight;
+float redoDivX, redoDivY, redoDivWidth, redoDivHeight;
+float loopDivX, loopDivY, loopDivWidth, loopDivHeight;
+float rewindDivX, rewindDivY, rewindDivWidth, rewindDivHeight;
+float fastFowardDivX, fastFowardDivY, fastFowardDivWidth, fastFowardDivHeight;
 color blackInk, resetInk;
 float constantDecrease;
 int iWhile;
 float fontSize1, fontSize2, fontSize3, fontSize4;
 PFont font;
 
-Boolean playButton=false;
+Boolean playButton = false;
 
 void setup() { // Start Setup
 
@@ -137,10 +141,10 @@ void setup() { // Start Setup
   float maxTimeDivWidth = appWidth * 75 / paperWidth;
   float maxTimeDivHeight = appHeight * 50 / paperHeight;
 
-  float redoDivX = appWidth * 80 / paperWidth;
-  float redoDivY = appHeight * 825 / paperHeight;
-  float redoDivWidth = appWidth * 50 / paperWidth;
-  float redoDivHeight = appHeight * 140 / paperHeight;
+  redoDivX = appWidth * 80 / paperWidth;
+  redoDivY = appHeight * 825 / paperHeight;
+  redoDivWidth = appWidth * 50 / paperWidth;
+  redoDivHeight = appHeight * 140 / paperHeight;
 
   float redoSymbol1DivX1 = redoDivX + redoDivWidth * 1/4;
   float redoSymbol1DivY1 = redoDivY + redoDivHeight * 3/4;
@@ -170,10 +174,10 @@ void setup() { // Start Setup
   float redoSymbol5DivY3 = redoDivY + redoDivHeight * 5/8;
 
 
-  float loopDivX = appWidth * 670 / paperWidth;
-  float loopDivY = appHeight * 825 / paperHeight;
-  float loopDivWidth = appWidth * 50 / paperWidth;
-  float loopDivHeight = appHeight * 140 / paperHeight;
+  loopDivX = appWidth * 670 / paperWidth;
+  loopDivY = appHeight * 825 / paperHeight;
+  loopDivWidth = appWidth * 50 / paperWidth;
+  loopDivHeight = appHeight * 140 / paperHeight;
 
   float loopSymbol1DivX1 = loopDivX + loopDivWidth * 1/4;
   float loopSymbol1DivY1 = loopDivY + loopDivHeight * 3/4;
@@ -226,10 +230,10 @@ void setup() { // Start Setup
   float prevSymbol2DivWidth = prevDivWidth * 1/8;
   float prevSymbol2DivHeight = prevDivHeight * 1/2;
 
-  float rewindDivX = appWidth * 325 / paperWidth;
-  float rewindDivY = appHeight * 1000 / paperHeight;
-  float rewindDivWidth = appWidth * 50 / paperWidth;
-  float rewindDivHeight = appHeight * 140 / paperHeight;
+  rewindDivX = appWidth * 325 / paperWidth;
+  rewindDivY = appHeight * 1000 / paperHeight;
+  rewindDivWidth = appWidth * 50 / paperWidth;
+  rewindDivHeight = appHeight * 140 / paperHeight;
 
   float rewindSymbol1DivX1 = rewindDivX + rewindDivWidth * 3/4;
   float rewindSymbol1DivY1 = rewindDivY + rewindDivHeight * 1/4;
@@ -246,10 +250,10 @@ void setup() { // Start Setup
   float rewindSymbol2DivY3 = rewindDivY + rewindDivHeight * 1/2;
 
 
-  float playPauseDivX = appWidth * 375 / paperWidth;
-  float playPauseDivY = appHeight * 1000 / paperHeight;
-  float playPauseDivWidth = appWidth * 50 / paperWidth;
-  float playPauseDivHeight = appHeight * 140 / paperHeight;
+  playPauseDivX = appWidth * 375 / paperWidth;
+  playPauseDivY = appHeight * 1000 / paperHeight;
+  playPauseDivWidth = appWidth * 50 / paperWidth;
+  playPauseDivHeight = appHeight * 140 / paperHeight;
 
   float playSymbolDivX1 = playPauseDivX + playPauseDivWidth * 1/4;
   float playSymbolDivY1 = playPauseDivY + playPauseDivHeight * 1/4;
@@ -258,10 +262,10 @@ void setup() { // Start Setup
   float playSymbolDivX3 = playPauseDivX + playPauseDivWidth * 3/4;
   float playSymbolDivY3 = playPauseDivY + playPauseDivHeight * 1/2;
 
-  float fastFowardDivX = appWidth * 425 / paperWidth;
-  float fastFowardDivY = appHeight * 1000 / paperHeight;
-  float fastFowardDivWidth = appWidth * 50 / paperWidth;
-  float fastFowardDivHeight = appHeight * 140 / paperHeight;
+  fastFowardDivX = appWidth * 425 / paperWidth;
+  fastFowardDivY = appHeight * 1000 / paperHeight;
+  fastFowardDivWidth = appWidth * 50 / paperWidth;
+  fastFowardDivHeight = appHeight * 140 / paperHeight;
 
   float ffSymbol1DivX1 = fastFowardDivX + fastFowardDivWidth * 1/4;
   float ffSymbol1DivY1 = fastFowardDivY + fastFowardDivHeight * 1/4;
@@ -603,13 +607,11 @@ void draw() {
   fill(blackInk);
   text(playListMetaData[currentSong].title(), nameDivX, nameDivY, nameDivWidth, nameDivHeight );
   fill(resetInk);
-  
+
   if ( mouseX>playPauseDivX && mouseX<playPauseDivX+playPauseDivWidth && mouseY>playPauseDivY && mouseY<playPauseDivY+playPauseDivHeight ) {
-    //println("Wahoo! I'm playing you");
-    playButton = true;
+    //colour change
   } else {
-    //print(" ");
-    playButton = false;
+    //colour change
   }//End Introduction of DRAW()
   //
   //Button HoverOver
@@ -618,15 +620,38 @@ void draw() {
 
 void mousePressed() {
   //2D Music Symbol Changes: sending Boolean to draw()
-  
+
   //Music Play Functions
-  if ( playButton == true ) {
-    println("Play My Song");
-    playButton=false; //reset Boolean for draw()
-  } else {
-    println(" ");
+  
+  //Play/Pause
+  if ( mouseX>playPauseDivX && mouseX<playPauseDivX+playPauseDivWidth && mouseY>playPauseDivY && mouseY<playPauseDivY+playPauseDivHeight ) {
+    if (playList[currentSong].isPlaying() == true) {
+      playList[currentSong].pause();
+    } else {
+      playList[currentSong].play();
+    }
   }
   
+  //Redo
+  if ( mouseX>redoDivX && mouseX<redoDivX+redoDivWidth && mouseY>redoDivY && mouseY<redoDivY+redoDivHeight ) {
+      playList[currentSong].rewind();
+  }
+  
+  //Loop
+  if ( mouseX>loopDivX && mouseX<loopDivX+loopDivWidth && mouseY>loopDivY && mouseY<loopDivY+loopDivHeight ) {
+      playList[currentSong].loop();
+  }
+  
+  
+  //Rewind
+  if ( mouseX>rewindDivX && mouseX<rewindDivX+rewindDivWidth && mouseY>rewindDivY && mouseY<rewindDivY+rewindDivHeight ) {
+      playList[currentSong].skip(-10000);
+  }
+  
+  //Fast Foward
+  if ( mouseX>fastFowardDivX && mouseX<fastFowardDivX+fastFowardDivWidth && mouseY>fastFowardDivY && mouseY<fastFowardDivY+fastFowardDivHeight ) {
+      playList[currentSong].skip(10000);
+  }
 } // End MousePressed
 
 void keyPressed() {
