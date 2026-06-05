@@ -26,13 +26,33 @@ AudioPlayer[] soundEffects = new AudioPlayer[numberOfSoundEffect];
 int currentSong = numberOfSongs - numberOfSongs;
 
 float nameDivX, nameDivY, nameDivWidth, nameDivHeight;
+
 float playPauseDivX, playPauseDivY, playPauseDivWidth, playPauseDivHeight;
+  float playSymbolDivX1, playSymbolDivY1, playSymbolDivX2, playSymbolDivY2, playSymbolDivX3, playSymbolDivY3;
+  
 float redoDivX, redoDivY, redoDivWidth, redoDivHeight;
+  float redoSymbol1DivX1, redoSymbol1DivY1, redoSymbol1DivX2, redoSymbol1DivY2;
+  float redoSymbol2DivX1, redoSymbol2DivY1, redoSymbol2DivX2, redoSymbol2DivY2;
+  float redoSymbol3DivX1, redoSymbol3DivY1, redoSymbol3DivX2, redoSymbol3DivY2;
+  float redoSymbol4DivX1, redoSymbol4DivY1, redoSymbol4DivX2, redoSymbol4DivY2;
+  float redoSymbol5DivX1, redoSymbol5DivY1, redoSymbol5DivX2, redoSymbol5DivY2, redoSymbol5DivX3, redoSymbol5DivY3;
+
 float loopDivX, loopDivY, loopDivWidth, loopDivHeight;
+
 float rewindDivX, rewindDivY, rewindDivWidth, rewindDivHeight;
+
 float fastFowardDivX, fastFowardDivY, fastFowardDivWidth, fastFowardDivHeight;
-color blackInk, resetInk;
+
+float nextDivX, nextDivY, nextDivWidth, nextDivHeight;
+
+float prevDivX, prevDivY, prevDivWidth, prevDivHeight;
+
+float exitDivX, exitDivY, exitDivWidth, exitDivHeight;
+
+color blackInk, resetInk, btnhoverInk;
+
 float constantDecrease;
+
 int iWhile;
 float fontSize1, fontSize2, fontSize3, fontSize4;
 PFont font;
@@ -96,10 +116,10 @@ void setup() { // Start Setup
   float optionsSymbol3DivY = optionsDivY + optionsDivHeight * 3/4;
 
 
-  float exitDivX = appWidth * 675 / paperWidth;
-  float exitDivY = appHeight * 50 / paperHeight;
-  float exitDivWidth = appWidth * 50 / paperWidth;
-  float exitDivHeight = appHeight * 140 / paperHeight;
+  exitDivX = appWidth * 675 / paperWidth;
+  exitDivY = appHeight * 50 / paperHeight;
+  exitDivWidth = appWidth * 50 / paperWidth;
+  exitDivHeight = appHeight * 140 / paperHeight;
 
   float exitSymbol1DivX1 = exitDivX + exitDivWidth * 1/4;
   float exitSymbol1DivY1 = exitDivY + exitDivHeight * 1/4;
@@ -146,32 +166,32 @@ void setup() { // Start Setup
   redoDivWidth = appWidth * 50 / paperWidth;
   redoDivHeight = appHeight * 140 / paperHeight;
 
-  float redoSymbol1DivX1 = redoDivX + redoDivWidth * 1/4;
-  float redoSymbol1DivY1 = redoDivY + redoDivHeight * 3/4;
-  float redoSymbol1DivX2 = redoDivX + redoDivWidth * 1/4;
-  float redoSymbol1DivY2 = redoDivY + redoDivHeight * 1/4;
+  redoSymbol1DivX1 = redoDivX + redoDivWidth * 1/4;
+  redoSymbol1DivY1 = redoDivY + redoDivHeight * 3/4;
+  redoSymbol1DivX2 = redoDivX + redoDivWidth * 1/4;
+  redoSymbol1DivY2 = redoDivY + redoDivHeight * 1/4;
 
-  float redoSymbol2DivX1 = redoDivX + redoDivWidth * 1/4;
-  float redoSymbol2DivY1 = redoDivY + redoDivHeight * 1/4;
-  float redoSymbol2DivX2 = redoDivX + redoDivWidth * 3/4;
-  float redoSymbol2DivY2 = redoDivY + redoDivHeight * 1/4;
+  redoSymbol2DivX1 = redoDivX + redoDivWidth * 1/4;
+  redoSymbol2DivY1 = redoDivY + redoDivHeight * 1/4;
+  redoSymbol2DivX2 = redoDivX + redoDivWidth * 3/4;
+  redoSymbol2DivY2 = redoDivY + redoDivHeight * 1/4;
 
-  float redoSymbol3DivX1 = redoDivX + redoDivWidth * 1/4;
-  float redoSymbol3DivY1 = redoDivY + redoDivHeight * 3/4;
-  float redoSymbol3DivX2 = redoDivX + redoDivWidth * 3/4;
-  float redoSymbol3DivY2 = redoDivY + redoDivHeight * 3/4;
+  redoSymbol3DivX1 = redoDivX + redoDivWidth * 1/4;
+  redoSymbol3DivY1 = redoDivY + redoDivHeight * 3/4;
+  redoSymbol3DivX2 = redoDivX + redoDivWidth * 3/4;
+  redoSymbol3DivY2 = redoDivY + redoDivHeight * 3/4;
 
-  float redoSymbol4DivX1 = redoDivX + redoDivWidth * 3/4;
-  float redoSymbol4DivY1 = redoDivY + redoDivHeight * 1/4;
-  float redoSymbol4DivX2 = redoDivX + redoDivWidth * 3/4;
-  float redoSymbol4DivY2 = redoDivY + redoDivHeight * 1/2;
+  redoSymbol4DivX1 = redoDivX + redoDivWidth * 3/4;
+  redoSymbol4DivY1 = redoDivY + redoDivHeight * 1/4;
+  redoSymbol4DivX2 = redoDivX + redoDivWidth * 3/4;
+  redoSymbol4DivY2 = redoDivY + redoDivHeight * 1/2;
 
-  float redoSymbol5DivX1 = redoDivX + redoDivWidth * 11/16;
-  float redoSymbol5DivY1 = redoDivY + redoDivHeight * 1/2;
-  float redoSymbol5DivX2 = redoDivX + redoDivWidth * 13/16;
-  float redoSymbol5DivY2 = redoDivY + redoDivHeight * 1/2;
-  float redoSymbol5DivX3 = redoDivX + redoDivWidth * 3/4;
-  float redoSymbol5DivY3 = redoDivY + redoDivHeight * 5/8;
+  redoSymbol5DivX1 = redoDivX + redoDivWidth * 11/16;
+  redoSymbol5DivY1 = redoDivY + redoDivHeight * 1/2;
+  redoSymbol5DivX2 = redoDivX + redoDivWidth * 13/16;
+  redoSymbol5DivY2 = redoDivY + redoDivHeight * 1/2;
+  redoSymbol5DivX3 = redoDivX + redoDivWidth * 3/4;
+  redoSymbol5DivY3 = redoDivY + redoDivHeight * 5/8;
 
 
   loopDivX = appWidth * 670 / paperWidth;
@@ -213,10 +233,10 @@ void setup() { // Start Setup
   float loopSymbol6DivX3 = loopDivX + loopDivWidth * 3/4;
   float loopSymbol6DivY3 = loopDivY + loopDivHeight * 5/8;
 
-  float prevDivX = appWidth * 275 / paperWidth;
-  float prevDivY = appHeight * 1000 / paperHeight;
-  float prevDivWidth = appWidth * 50 / paperWidth;
-  float prevDivHeight = appHeight * 140 / paperHeight;
+  prevDivX = appWidth * 275 / paperWidth;
+  prevDivY = appHeight * 1000 / paperHeight;
+  prevDivWidth = appWidth * 50 / paperWidth;
+  prevDivHeight = appHeight * 140 / paperHeight;
 
   float prevSymbol1DivX1 = prevDivX + prevDivWidth * 3/4;
   float prevSymbol1DivY1 = prevDivY + prevDivHeight * 1/4;
@@ -255,12 +275,12 @@ void setup() { // Start Setup
   playPauseDivWidth = appWidth * 50 / paperWidth;
   playPauseDivHeight = appHeight * 140 / paperHeight;
 
-  float playSymbolDivX1 = playPauseDivX + playPauseDivWidth * 1/4;
-  float playSymbolDivY1 = playPauseDivY + playPauseDivHeight * 1/4;
-  float playSymbolDivX2 = playPauseDivX + playPauseDivWidth * 1/4;
-  float playSymbolDivY2 = playPauseDivY + playPauseDivHeight * 3/4;
-  float playSymbolDivX3 = playPauseDivX + playPauseDivWidth * 3/4;
-  float playSymbolDivY3 = playPauseDivY + playPauseDivHeight * 1/2;
+  playSymbolDivX1 = playPauseDivX + playPauseDivWidth * 1/4;
+  playSymbolDivY1 = playPauseDivY + playPauseDivHeight * 1/4;
+  playSymbolDivX2 = playPauseDivX + playPauseDivWidth * 1/4;
+  playSymbolDivY2 = playPauseDivY + playPauseDivHeight * 3/4;
+  playSymbolDivX3 = playPauseDivX + playPauseDivWidth * 3/4;
+  playSymbolDivY3 = playPauseDivY + playPauseDivHeight * 1/2;
 
   fastFowardDivX = appWidth * 425 / paperWidth;
   fastFowardDivY = appHeight * 1000 / paperHeight;
@@ -281,10 +301,10 @@ void setup() { // Start Setup
   float ffSymbol2DivX3 = fastFowardDivX + fastFowardDivWidth * 3/4;
   float ffSymbol2DivY3 = fastFowardDivY + fastFowardDivHeight * 1/2;
 
-  float nextDivX = appWidth * 475 / paperWidth;
-  float nextDivY = appHeight * 1000 / paperHeight;
-  float nextDivWidth = appWidth * 50 / paperWidth;
-  float nextDivHeight = appHeight * 140 / paperHeight;
+  nextDivX = appWidth * 475 / paperWidth;
+  nextDivY = appHeight * 1000 / paperHeight;
+  nextDivWidth = appWidth * 50 / paperWidth;
+  nextDivHeight = appHeight * 140 / paperHeight;
 
   float nextSymbol1DivX1 = nextDivX + nextDivWidth * 1/4;
   float nextSymbol1DivY1 = nextDivY + nextDivHeight * 1/4;
@@ -459,6 +479,8 @@ void setup() { // Start Setup
   color blackInk = #000000;
   color whiteInk = #FFFFFF;
   resetInk = whiteInk;
+  btnhoverInk = #7C7C7C;
+  
 
   fill(blackInk);
 
@@ -608,14 +630,41 @@ void draw() {
   text(playListMetaData[currentSong].title(), nameDivX, nameDivY, nameDivWidth, nameDivHeight );
   fill(resetInk);
 
-  if ( mouseX>playPauseDivX && mouseX<playPauseDivX+playPauseDivWidth && mouseY>playPauseDivY && mouseY<playPauseDivY+playPauseDivHeight ) {
-    //colour change
-  } else {
-    //colour change
-  }//End Introduction of DRAW()
-  //
   //Button HoverOver
-  //
+  
+  //Play
+  if ( mouseX>playPauseDivX && mouseX<playPauseDivX+playPauseDivWidth && mouseY>playPauseDivY && mouseY<playPauseDivY+playPauseDivHeight ) {
+    fill(btnhoverInk);
+    rect(playPauseDivX, playPauseDivY, playPauseDivWidth, playPauseDivHeight);
+    triangle(playSymbolDivX1, playSymbolDivY1, playSymbolDivX2, playSymbolDivY2, playSymbolDivX3, playSymbolDivY3);
+    fill(resetInk);
+    } else {
+    fill(resetInk);
+    rect(playPauseDivX, playPauseDivY, playPauseDivWidth, playPauseDivHeight);
+    triangle(playSymbolDivX1, playSymbolDivY1, playSymbolDivX2, playSymbolDivY2, playSymbolDivX3, playSymbolDivY3);
+    fill(resetInk);
+  }
+  
+  //Redo
+  if ( mouseX>redoDivX && mouseX<redoDivX+redoDivWidth && mouseY>redoDivY && mouseY<redoDivY+redoDivHeight ) {
+    fill(btnhoverInk);
+    rect(redoDivX, redoDivY, redoDivWidth, redoDivHeight);
+    line(redoSymbol1DivX1, redoSymbol1DivY1, redoSymbol1DivX2, redoSymbol1DivY2);
+    line(redoSymbol2DivX1, redoSymbol2DivY1, redoSymbol2DivX2, redoSymbol2DivY2);
+    line(redoSymbol3DivX1, redoSymbol3DivY1, redoSymbol3DivX2, redoSymbol3DivY2);
+    line(redoSymbol4DivX1, redoSymbol4DivY1, redoSymbol4DivX2, redoSymbol4DivY2);
+    triangle(redoSymbol5DivX1, redoSymbol5DivY1, redoSymbol5DivX2, redoSymbol5DivY2, redoSymbol5DivX3, redoSymbol5DivY3);
+    fill(resetInk);
+    } else {
+    fill(resetInk);
+    rect(redoDivX, redoDivY, redoDivWidth, redoDivHeight);
+    line(redoSymbol1DivX1, redoSymbol1DivY1, redoSymbol1DivX2, redoSymbol1DivY2);
+    line(redoSymbol2DivX1, redoSymbol2DivY1, redoSymbol2DivX2, redoSymbol2DivY2);
+    line(redoSymbol3DivX1, redoSymbol3DivY1, redoSymbol3DivX2, redoSymbol3DivY2);
+    line(redoSymbol4DivX1, redoSymbol4DivY1, redoSymbol4DivX2, redoSymbol4DivY2);
+    triangle(redoSymbol5DivX1, redoSymbol5DivY1, redoSymbol5DivX2, redoSymbol5DivY2, redoSymbol5DivX3, redoSymbol5DivY3);
+    fill(resetInk);
+  }
 } // End Draw
 
 void mousePressed() {
@@ -652,6 +701,64 @@ void mousePressed() {
   if ( mouseX>fastFowardDivX && mouseX<fastFowardDivX+fastFowardDivWidth && mouseY>fastFowardDivY && mouseY<fastFowardDivY+fastFowardDivHeight ) {
       playList[currentSong].skip(10000);
   }
+  
+  //Next
+  if ( mouseX>nextDivX && mouseX<nextDivX+nextDivWidth && mouseY>nextDivY && mouseY<nextDivY+nextDivHeight ) {
+      if ( playList[currentSong].isPlaying() ) {
+      playList[currentSong].pause();
+      playList[currentSong].rewind();
+      //
+      if ( currentSong==numberOfSongs-1 ) {
+        currentSong = 0;
+      } else {
+        currentSong++;
+      }
+      playList[currentSong].play();
+    } else {
+      //
+      playList[currentSong].rewind();
+      //
+      if ( currentSong==numberOfSongs-1 ) {
+        currentSong = 0;
+      } else {
+        currentSong++;
+      }
+      // NEXT will not automatically play the song
+      //song[currentSong].play();
+    }
+  }
+  
+  //Prev
+  
+  if ( mouseX>prevDivX && mouseX<prevDivX+prevDivWidth && mouseY>prevDivY && mouseY<prevDivY+prevDivHeight ) {
+      if ( playList[currentSong].isPlaying() ) {
+      playList[currentSong].pause();
+      playList[currentSong].rewind();
+      //
+      if ( currentSong==0 ) {
+        currentSong = numberOfSongs-1;
+      } else {
+        currentSong = currentSong - 1;
+      }
+      playList[currentSong].play();
+    } else {
+      //
+      playList[currentSong].rewind();
+      //
+      if ( currentSong==numberOfSongs-1 ) {
+        currentSong = 0;
+      } else {
+        currentSong++;
+      }
+      // NEXT will not automatically play the song
+      //song[currentSong].play();
+    }
+  }
+  
+  if ( mouseX>exitDivX && mouseX<exitDivX+exitDivWidth && mouseY>exitDivY && mouseY<exitDivY+exitDivHeight ) {
+      exit();
+  }
+  
 } // End MousePressed
 
 void keyPressed() {
