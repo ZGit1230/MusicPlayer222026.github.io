@@ -38,16 +38,32 @@ float redoDivX, redoDivY, redoDivWidth, redoDivHeight;
   float redoSymbol5DivX1, redoSymbol5DivY1, redoSymbol5DivX2, redoSymbol5DivY2, redoSymbol5DivX3, redoSymbol5DivY3;
 
 float loopDivX, loopDivY, loopDivWidth, loopDivHeight;
+  float loopSymbol1DivX1, loopSymbol1DivY1, loopSymbol1DivX2, loopSymbol1DivY2;
+  float loopSymbol2DivX1, loopSymbol2DivY1, loopSymbol2DivX2, loopSymbol2DivY2;
+  float loopSymbol3DivX1, loopSymbol3DivY1, loopSymbol3DivX2, loopSymbol3DivY2;
+  float loopSymbol4DivX1, loopSymbol4DivY1, loopSymbol4DivX2, loopSymbol4DivY2;
+  float loopSymbol5DivX1, loopSymbol5DivY1, loopSymbol5DivX2, loopSymbol5DivY2, loopSymbol5DivX3, loopSymbol5DivY3;
+  float loopSymbol6DivX1, loopSymbol6DivY1, loopSymbol6DivX2, loopSymbol6DivY2, loopSymbol6DivX3, loopSymbol6DivY3;
 
 float rewindDivX, rewindDivY, rewindDivWidth, rewindDivHeight;
+  float rewindSymbol1DivX1, rewindSymbol1DivY1, rewindSymbol1DivX2, rewindSymbol1DivY2, rewindSymbol1DivX3, rewindSymbol1DivY3;
+  float rewindSymbol2DivX1, rewindSymbol2DivY1, rewindSymbol2DivX2, rewindSymbol2DivY2, rewindSymbol2DivX3, rewindSymbol2DivY3;
 
 float fastFowardDivX, fastFowardDivY, fastFowardDivWidth, fastFowardDivHeight;
+  float ffSymbol1DivX1, ffSymbol1DivY1, ffSymbol1DivX2, ffSymbol1DivY2, ffSymbol1DivX3, ffSymbol1DivY3;
+  float ffSymbol2DivX1, ffSymbol2DivY1, ffSymbol2DivX2, ffSymbol2DivY2, ffSymbol2DivX3, ffSymbol2DivY3;
 
 float nextDivX, nextDivY, nextDivWidth, nextDivHeight;
+  float nextSymbol1DivX1, nextSymbol1DivY1, nextSymbol1DivX2, nextSymbol1DivY2, nextSymbol1DivX3, nextSymbol1DivY3;
+  float nextSymbol2DivX, nextSymbol2DivY, nextSymbol2DivWidth, nextSymbol2DivHeight;
 
 float prevDivX, prevDivY, prevDivWidth, prevDivHeight;
+  float prevSymbol1DivX1, prevSymbol1DivY1, prevSymbol1DivX2, prevSymbol1DivY2, prevSymbol1DivX3, prevSymbol1DivY3;
+  float prevSymbol2DivX, prevSymbol2DivY, prevSymbol2DivWidth, prevSymbol2DivHeight;
 
 float exitDivX, exitDivY, exitDivWidth, exitDivHeight;
+  float exitSymbol1DivX1, exitSymbol1DivY1, exitSymbol1DivX2, exitSymbol1DivY2;
+  float exitSymbol2DivX1, exitSymbol2DivY1, exitSymbol2DivX2, exitSymbol2DivY2;
 
 color blackInk, resetInk, btnhoverInk;
 
@@ -121,15 +137,15 @@ void setup() { // Start Setup
   exitDivWidth = appWidth * 50 / paperWidth;
   exitDivHeight = appHeight * 140 / paperHeight;
 
-  float exitSymbol1DivX1 = exitDivX + exitDivWidth * 1/4;
-  float exitSymbol1DivY1 = exitDivY + exitDivHeight * 1/4;
-  float exitSymbol1DivX2 = exitDivX + exitDivWidth * 3/4;
-  float exitSymbol1DivY2 = exitDivY + exitDivHeight * 3/4;
+  exitSymbol1DivX1 = exitDivX + exitDivWidth * 1/4;
+  exitSymbol1DivY1 = exitDivY + exitDivHeight * 1/4;
+  exitSymbol1DivX2 = exitDivX + exitDivWidth * 3/4;
+  exitSymbol1DivY2 = exitDivY + exitDivHeight * 3/4;
 
-  float exitSymbol2DivX1 = exitDivX + exitDivWidth * 3/4;
-  float exitSymbol2DivY1 = exitDivY + exitDivHeight * 1/4;
-  float exitSymbol2DivX2 = exitDivX + exitDivWidth * 1/4;
-  float exitSymbol2DivY2 = exitDivY + exitDivHeight * 3/4;
+  exitSymbol2DivX1 = exitDivX + exitDivWidth * 3/4;
+  exitSymbol2DivY1 = exitDivY + exitDivHeight * 1/4;
+  exitSymbol2DivX2 = exitDivX + exitDivWidth * 1/4;
+  exitSymbol2DivY2 = exitDivY + exitDivHeight * 3/4;
 
   float authorDivX = appWidth * 350 / paperWidth;
   float authorDivY = appHeight * 186 / paperHeight;
@@ -199,75 +215,75 @@ void setup() { // Start Setup
   loopDivWidth = appWidth * 50 / paperWidth;
   loopDivHeight = appHeight * 140 / paperHeight;
 
-  float loopSymbol1DivX1 = loopDivX + loopDivWidth * 1/4;
-  float loopSymbol1DivY1 = loopDivY + loopDivHeight * 3/4;
-  float loopSymbol1DivX2 = loopDivX + loopDivWidth * 1/4;
-  float loopSymbol1DivY2 = loopDivY + loopDivHeight * 1/2;
+  loopSymbol1DivX1 = loopDivX + loopDivWidth * 1/4;
+  loopSymbol1DivY1 = loopDivY + loopDivHeight * 3/4;
+  loopSymbol1DivX2 = loopDivX + loopDivWidth * 1/4;
+  loopSymbol1DivY2 = loopDivY + loopDivHeight * 1/2;
 
-  float loopSymbol2DivX1 = loopDivX + loopDivWidth * 1/4;
-  float loopSymbol2DivY1 = loopDivY + loopDivHeight * 1/4;
-  float loopSymbol2DivX2 = loopDivX + loopDivWidth * 3/4;
-  float loopSymbol2DivY2 = loopDivY + loopDivHeight * 1/4;
+  loopSymbol2DivX1 = loopDivX + loopDivWidth * 1/4;
+  loopSymbol2DivY1 = loopDivY + loopDivHeight * 1/4;
+  loopSymbol2DivX2 = loopDivX + loopDivWidth * 3/4;
+  loopSymbol2DivY2 = loopDivY + loopDivHeight * 1/4;
 
-  float loopSymbol3DivX1 = loopDivX + loopDivWidth * 3/4;
-  float loopSymbol3DivY1 = loopDivY + loopDivHeight * 1/4;
-  float loopSymbol3DivX2 = loopDivX + loopDivWidth * 3/4;
-  float loopSymbol3DivY2 = loopDivY + loopDivHeight * 1/2;
+  loopSymbol3DivX1 = loopDivX + loopDivWidth * 3/4;
+  loopSymbol3DivY1 = loopDivY + loopDivHeight * 1/4;
+  loopSymbol3DivX2 = loopDivX + loopDivWidth * 3/4;
+  loopSymbol3DivY2 = loopDivY + loopDivHeight * 1/2;
 
-  float loopSymbol4DivX1 = loopDivX + loopDivWidth * 3/4;
-  float loopSymbol4DivY1 = loopDivY + loopDivHeight * 3/4;
-  float loopSymbol4DivX2 = loopDivX + loopDivWidth * 1/4;
-  float loopSymbol4DivY2 = loopDivY + loopDivHeight * 3/4;
+  loopSymbol4DivX1 = loopDivX + loopDivWidth * 3/4;
+  loopSymbol4DivY1 = loopDivY + loopDivHeight * 3/4;
+  loopSymbol4DivX2 = loopDivX + loopDivWidth * 1/4;
+  loopSymbol4DivY2 = loopDivY + loopDivHeight * 3/4;
 
-  float loopSymbol5DivX1 = loopDivX + loopDivWidth * 3/16;
-  float loopSymbol5DivY1 = loopDivY + loopDivHeight * 1/2;
-  float loopSymbol5DivX2 = loopDivX + loopDivWidth * 5.25/16;
-  float loopSymbol5DivY2 = loopDivY + loopDivHeight * 1/2;
-  float loopSymbol5DivX3 = loopDivX + loopDivWidth * 1/4;
-  float loopSymbol5DivY3 = loopDivY + loopDivHeight * 3/8;
+  loopSymbol5DivX1 = loopDivX + loopDivWidth * 3/16;
+  loopSymbol5DivY1 = loopDivY + loopDivHeight * 1/2;
+  loopSymbol5DivX2 = loopDivX + loopDivWidth * 5.25/16;
+  loopSymbol5DivY2 = loopDivY + loopDivHeight * 1/2;
+  loopSymbol5DivX3 = loopDivX + loopDivWidth * 1/4;
+  loopSymbol5DivY3 = loopDivY + loopDivHeight * 3/8;
 
-  float loopSymbol6DivX1 = loopDivX + loopDivWidth * 11/16;
-  float loopSymbol6DivY1 = loopDivY + loopDivHeight * 1/2;
-  float loopSymbol6DivX2 = loopDivX + loopDivWidth * 13/16;
-  float loopSymbol6DivY2 = loopDivY + loopDivHeight * 1/2;
-  float loopSymbol6DivX3 = loopDivX + loopDivWidth * 3/4;
-  float loopSymbol6DivY3 = loopDivY + loopDivHeight * 5/8;
+  loopSymbol6DivX1 = loopDivX + loopDivWidth * 11/16;
+  loopSymbol6DivY1 = loopDivY + loopDivHeight * 1/2;
+  loopSymbol6DivX2 = loopDivX + loopDivWidth * 13/16;
+  loopSymbol6DivY2 = loopDivY + loopDivHeight * 1/2;
+  loopSymbol6DivX3 = loopDivX + loopDivWidth * 3/4;
+  loopSymbol6DivY3 = loopDivY + loopDivHeight * 5/8;
 
   prevDivX = appWidth * 275 / paperWidth;
   prevDivY = appHeight * 1000 / paperHeight;
   prevDivWidth = appWidth * 50 / paperWidth;
   prevDivHeight = appHeight * 140 / paperHeight;
 
-  float prevSymbol1DivX1 = prevDivX + prevDivWidth * 3/4;
-  float prevSymbol1DivY1 = prevDivY + prevDivHeight * 1/4;
-  float prevSymbol1DivX2 = prevDivX + prevDivWidth * 3/4;
-  float prevSymbol1DivY2 = prevDivY + prevDivHeight * 3/4;
-  float prevSymbol1DivX3 = prevDivX + prevDivWidth * 1/2;
-  float prevSymbol1DivY3 = prevDivY + prevDivHeight * 1/2;
+  prevSymbol1DivX1 = prevDivX + prevDivWidth * 3/4;
+  prevSymbol1DivY1 = prevDivY + prevDivHeight * 1/4;
+  prevSymbol1DivX2 = prevDivX + prevDivWidth * 3/4;
+  prevSymbol1DivY2 = prevDivY + prevDivHeight * 3/4;
+  prevSymbol1DivX3 = prevDivX + prevDivWidth * 1/2;
+  prevSymbol1DivY3 = prevDivY + prevDivHeight * 1/2;
 
-  float prevSymbol2DivX = prevDivX + prevDivWidth * 3/8;
-  float prevSymbol2DivY = prevDivY + prevDivHeight * 1/4;
-  float prevSymbol2DivWidth = prevDivWidth * 1/8;
-  float prevSymbol2DivHeight = prevDivHeight * 1/2;
+  prevSymbol2DivX = prevDivX + prevDivWidth * 3/8;
+  prevSymbol2DivY = prevDivY + prevDivHeight * 1/4;
+  prevSymbol2DivWidth = prevDivWidth * 1/8;
+  prevSymbol2DivHeight = prevDivHeight * 1/2;
 
   rewindDivX = appWidth * 325 / paperWidth;
   rewindDivY = appHeight * 1000 / paperHeight;
   rewindDivWidth = appWidth * 50 / paperWidth;
   rewindDivHeight = appHeight * 140 / paperHeight;
 
-  float rewindSymbol1DivX1 = rewindDivX + rewindDivWidth * 3/4;
-  float rewindSymbol1DivY1 = rewindDivY + rewindDivHeight * 1/4;
-  float rewindSymbol1DivX2 = rewindDivX + rewindDivWidth * 3/4;
-  float rewindSymbol1DivY2 = rewindDivY + rewindDivHeight * 3/4;
-  float rewindSymbol1DivX3 = rewindDivX + rewindDivWidth * 1/2;
-  float rewindSymbol1DivY3 = rewindDivY + rewindDivHeight * 1/2;
+  rewindSymbol1DivX1 = rewindDivX + rewindDivWidth * 3/4;
+  rewindSymbol1DivY1 = rewindDivY + rewindDivHeight * 1/4;
+  rewindSymbol1DivX2 = rewindDivX + rewindDivWidth * 3/4;
+  rewindSymbol1DivY2 = rewindDivY + rewindDivHeight * 3/4;
+  rewindSymbol1DivX3 = rewindDivX + rewindDivWidth * 1/2;
+  rewindSymbol1DivY3 = rewindDivY + rewindDivHeight * 1/2;
 
-  float rewindSymbol2DivX1 = rewindDivX + rewindDivWidth * 1/2;
-  float rewindSymbol2DivY1 = rewindDivY + rewindDivHeight * 1/4;
-  float rewindSymbol2DivX2 = rewindDivX + rewindDivWidth * 1/2;
-  float rewindSymbol2DivY2 = rewindDivY + rewindDivHeight * 3/4;
-  float rewindSymbol2DivX3 = rewindDivX + rewindDivWidth * 1/4;
-  float rewindSymbol2DivY3 = rewindDivY + rewindDivHeight * 1/2;
+  rewindSymbol2DivX1 = rewindDivX + rewindDivWidth * 1/2;
+  rewindSymbol2DivY1 = rewindDivY + rewindDivHeight * 1/4;
+  rewindSymbol2DivX2 = rewindDivX + rewindDivWidth * 1/2;
+  rewindSymbol2DivY2 = rewindDivY + rewindDivHeight * 3/4;
+  rewindSymbol2DivX3 = rewindDivX + rewindDivWidth * 1/4;
+  rewindSymbol2DivY3 = rewindDivY + rewindDivHeight * 1/2;
 
 
   playPauseDivX = appWidth * 375 / paperWidth;
@@ -287,36 +303,36 @@ void setup() { // Start Setup
   fastFowardDivWidth = appWidth * 50 / paperWidth;
   fastFowardDivHeight = appHeight * 140 / paperHeight;
 
-  float ffSymbol1DivX1 = fastFowardDivX + fastFowardDivWidth * 1/4;
-  float ffSymbol1DivY1 = fastFowardDivY + fastFowardDivHeight * 1/4;
-  float ffSymbol1DivX2 = fastFowardDivX + fastFowardDivWidth * 1/4;
-  float ffSymbol1DivY2 = fastFowardDivY + fastFowardDivHeight * 3/4;
-  float ffSymbol1DivX3 = fastFowardDivX + fastFowardDivWidth * 1/2;
-  float ffSymbol1DivY3 = fastFowardDivY + fastFowardDivHeight * 1/2;
+  ffSymbol1DivX1 = fastFowardDivX + fastFowardDivWidth * 1/4;
+  ffSymbol1DivY1 = fastFowardDivY + fastFowardDivHeight * 1/4;
+  ffSymbol1DivX2 = fastFowardDivX + fastFowardDivWidth * 1/4;
+  ffSymbol1DivY2 = fastFowardDivY + fastFowardDivHeight * 3/4;
+  ffSymbol1DivX3 = fastFowardDivX + fastFowardDivWidth * 1/2;
+  ffSymbol1DivY3 = fastFowardDivY + fastFowardDivHeight * 1/2;
 
-  float ffSymbol2DivX1 = fastFowardDivX + fastFowardDivWidth * 1/2;
-  float ffSymbol2DivY1 = fastFowardDivY + fastFowardDivHeight * 1/4;
-  float ffSymbol2DivX2 = fastFowardDivX + fastFowardDivWidth * 1/2;
-  float ffSymbol2DivY2 = fastFowardDivY + fastFowardDivHeight * 3/4;
-  float ffSymbol2DivX3 = fastFowardDivX + fastFowardDivWidth * 3/4;
-  float ffSymbol2DivY3 = fastFowardDivY + fastFowardDivHeight * 1/2;
+  ffSymbol2DivX1 = fastFowardDivX + fastFowardDivWidth * 1/2;
+  ffSymbol2DivY1 = fastFowardDivY + fastFowardDivHeight * 1/4;
+  ffSymbol2DivX2 = fastFowardDivX + fastFowardDivWidth * 1/2;
+  ffSymbol2DivY2 = fastFowardDivY + fastFowardDivHeight * 3/4;
+  ffSymbol2DivX3 = fastFowardDivX + fastFowardDivWidth * 3/4;
+  ffSymbol2DivY3 = fastFowardDivY + fastFowardDivHeight * 1/2;
 
   nextDivX = appWidth * 475 / paperWidth;
   nextDivY = appHeight * 1000 / paperHeight;
   nextDivWidth = appWidth * 50 / paperWidth;
   nextDivHeight = appHeight * 140 / paperHeight;
 
-  float nextSymbol1DivX1 = nextDivX + nextDivWidth * 1/4;
-  float nextSymbol1DivY1 = nextDivY + nextDivHeight * 1/4;
-  float nextSymbol1DivX2 = nextDivX + nextDivWidth * 1/4;
-  float nextSymbol1DivY2 = nextDivY + nextDivHeight * 3/4;
-  float nextSymbol1DivX3 = nextDivX + nextDivWidth * 1/2;
-  float nextSymbol1DivY3 = nextDivY + nextDivHeight * 1/2;
+  nextSymbol1DivX1 = nextDivX + nextDivWidth * 1/4;
+  nextSymbol1DivY1 = nextDivY + nextDivHeight * 1/4;
+  nextSymbol1DivX2 = nextDivX + nextDivWidth * 1/4;
+  nextSymbol1DivY2 = nextDivY + nextDivHeight * 3/4;
+  nextSymbol1DivX3 = nextDivX + nextDivWidth * 1/2;
+  nextSymbol1DivY3 = nextDivY + nextDivHeight * 1/2;
 
-  float nextSymbol2DivX = nextDivX + nextDivWidth * 1/2;
-  float nextSymbol2DivY = nextDivY + nextDivHeight * 1/4;
-  float nextSymbol2DivWidth = nextDivWidth * 1/8;
-  float nextSymbol2DivHeight = nextDivHeight * 1/2;
+  nextSymbol2DivX = nextDivX + nextDivWidth * 1/2;
+  nextSymbol2DivY = nextDivY + nextDivHeight * 1/4;
+  nextSymbol2DivWidth = nextDivWidth * 1/8;
+  nextSymbol2DivHeight = nextDivHeight * 1/2;
 
   rect(menuDivX, menuDivY, menuDivWidth, menuDivHeight);
   rect(menuSymbol1DivX, menuSymbol1DivY, menuSymbol1DivWidth, menuSymbol1DivHeight);
@@ -665,6 +681,105 @@ void draw() {
     triangle(redoSymbol5DivX1, redoSymbol5DivY1, redoSymbol5DivX2, redoSymbol5DivY2, redoSymbol5DivX3, redoSymbol5DivY3);
     fill(resetInk);
   }
+  
+  //Loop
+  if ( mouseX>loopDivX && mouseX<loopDivX+loopDivWidth && mouseY>loopDivY && mouseY<loopDivY+loopDivHeight ) {
+    fill(btnhoverInk);
+    rect(loopDivX, loopDivY, loopDivWidth, loopDivHeight);
+    line(loopSymbol1DivX1, loopSymbol1DivY1, loopSymbol1DivX2, loopSymbol1DivY2);
+    line(loopSymbol2DivX1, loopSymbol2DivY1, loopSymbol2DivX2, loopSymbol2DivY2);
+    line(loopSymbol3DivX1, loopSymbol3DivY1, loopSymbol3DivX2, loopSymbol3DivY2);
+    line(loopSymbol4DivX1, loopSymbol4DivY1, loopSymbol4DivX2, loopSymbol4DivY2);
+    triangle(loopSymbol5DivX1, loopSymbol5DivY1, loopSymbol5DivX2, loopSymbol5DivY2, loopSymbol5DivX3, loopSymbol5DivY3);
+    triangle(loopSymbol6DivX1, loopSymbol6DivY1, loopSymbol6DivX2, loopSymbol6DivY2, loopSymbol6DivX3, loopSymbol6DivY3);
+    fill(resetInk);
+    } else {
+    fill(resetInk);
+    rect(loopDivX, loopDivY, loopDivWidth, loopDivHeight);
+    line(loopSymbol1DivX1, loopSymbol1DivY1, loopSymbol1DivX2, loopSymbol1DivY2);
+    line(loopSymbol2DivX1, loopSymbol2DivY1, loopSymbol2DivX2, loopSymbol2DivY2);
+    line(loopSymbol3DivX1, loopSymbol3DivY1, loopSymbol3DivX2, loopSymbol3DivY2);
+    line(loopSymbol4DivX1, loopSymbol4DivY1, loopSymbol4DivX2, loopSymbol4DivY2);
+    triangle(loopSymbol5DivX1, loopSymbol5DivY1, loopSymbol5DivX2, loopSymbol5DivY2, loopSymbol5DivX3, loopSymbol5DivY3);
+    triangle(loopSymbol6DivX1, loopSymbol6DivY1, loopSymbol6DivX2, loopSymbol6DivY2, loopSymbol6DivX3, loopSymbol6DivY3);
+    fill(resetInk);
+  }
+  
+  //Rewind
+  if ( mouseX>rewindDivX && mouseX<rewindDivX+rewindDivWidth && mouseY>rewindDivY && mouseY<rewindDivY+rewindDivHeight ) {
+    fill(btnhoverInk);
+    rect(rewindDivX, rewindDivY, rewindDivWidth, rewindDivHeight);
+    triangle(rewindSymbol1DivX1, rewindSymbol1DivY1, rewindSymbol1DivX2, rewindSymbol1DivY2, rewindSymbol1DivX3, rewindSymbol1DivY3);
+    triangle(rewindSymbol2DivX1, rewindSymbol2DivY1, rewindSymbol2DivX2, rewindSymbol2DivY2, rewindSymbol2DivX3, rewindSymbol2DivY3);
+    fill(resetInk);
+    } else {
+    fill(resetInk);
+    rect(rewindDivX, rewindDivY, rewindDivWidth, rewindDivHeight);
+    triangle(rewindSymbol1DivX1, rewindSymbol1DivY1, rewindSymbol1DivX2, rewindSymbol1DivY2, rewindSymbol1DivX3, rewindSymbol1DivY3);
+    triangle(rewindSymbol2DivX1, rewindSymbol2DivY1, rewindSymbol2DivX2, rewindSymbol2DivY2, rewindSymbol2DivX3, rewindSymbol2DivY3);
+    fill(resetInk);
+  }
+  
+  //Fast Foward
+  if ( mouseX>fastFowardDivX && mouseX<fastFowardDivX+fastFowardDivWidth && mouseY>fastFowardDivY && mouseY<fastFowardDivY+fastFowardDivHeight ) {
+    fill(btnhoverInk);
+    rect(fastFowardDivX, fastFowardDivY, fastFowardDivWidth, fastFowardDivHeight);
+    triangle(ffSymbol1DivX1, ffSymbol1DivY1, ffSymbol1DivX2, ffSymbol1DivY2, ffSymbol1DivX3, ffSymbol1DivY3);
+    triangle(ffSymbol2DivX1, ffSymbol2DivY1, ffSymbol2DivX2, ffSymbol2DivY2, ffSymbol2DivX3, ffSymbol2DivY3);
+    fill(resetInk);
+    } else {
+    fill(resetInk);
+    rect(fastFowardDivX, fastFowardDivY, fastFowardDivWidth, fastFowardDivHeight);
+    triangle(ffSymbol1DivX1, ffSymbol1DivY1, ffSymbol1DivX2, ffSymbol1DivY2, ffSymbol1DivX3, ffSymbol1DivY3);
+    triangle(ffSymbol2DivX1, ffSymbol2DivY1, ffSymbol2DivX2, ffSymbol2DivY2, ffSymbol2DivX3, ffSymbol2DivY3);
+    fill(resetInk);
+  }
+  
+  //Next 
+  if ( mouseX>nextDivX && mouseX<nextDivX+nextDivWidth && mouseY>nextDivY && mouseY<nextDivY+nextDivHeight ) {
+    fill(btnhoverInk);
+    rect(nextDivX, nextDivY, nextDivWidth, nextDivHeight);
+    triangle(nextSymbol1DivX1, nextSymbol1DivY1, nextSymbol1DivX2, nextSymbol1DivY2, nextSymbol1DivX3, nextSymbol1DivY3);
+    rect(nextSymbol2DivX, nextSymbol2DivY, nextSymbol2DivWidth, nextSymbol2DivHeight);
+    fill(resetInk);
+    } else {
+    fill(resetInk);
+    rect(nextDivX, nextDivY, nextDivWidth, nextDivHeight);
+    triangle(nextSymbol1DivX1, nextSymbol1DivY1, nextSymbol1DivX2, nextSymbol1DivY2, nextSymbol1DivX3, nextSymbol1DivY3);
+    rect(nextSymbol2DivX, nextSymbol2DivY, nextSymbol2DivWidth, nextSymbol2DivHeight);
+    fill(resetInk);
+  }
+  
+  //Prev 
+  if ( mouseX>prevDivX && mouseX<prevDivX+prevDivWidth && mouseY>prevDivY && mouseY<prevDivY+prevDivHeight ) {
+    fill(btnhoverInk);
+    rect(prevDivX, prevDivY, prevDivWidth, prevDivHeight);
+    triangle(prevSymbol1DivX1, prevSymbol1DivY1, prevSymbol1DivX2, prevSymbol1DivY2, prevSymbol1DivX3, prevSymbol1DivY3);
+    rect(prevSymbol2DivX, prevSymbol2DivY, prevSymbol2DivWidth, prevSymbol2DivHeight);
+    fill(resetInk);
+    } else {
+    fill(resetInk);
+    rect(prevDivX, prevDivY, prevDivWidth, prevDivHeight);
+    triangle(prevSymbol1DivX1, prevSymbol1DivY1, prevSymbol1DivX2, prevSymbol1DivY2, prevSymbol1DivX3, prevSymbol1DivY3);
+    rect(prevSymbol2DivX, prevSymbol2DivY, prevSymbol2DivWidth, prevSymbol2DivHeight);
+    fill(resetInk);
+  }
+  
+  //Exit
+  if ( mouseX>exitDivX && mouseX<exitDivX+exitDivWidth && mouseY>exitDivY && mouseY<exitDivY+exitDivHeight ) {
+    fill(btnhoverInk);
+    rect(exitDivX, exitDivY, exitDivWidth, exitDivHeight);
+    line(exitSymbol1DivX1, exitSymbol1DivY1, exitSymbol1DivX2, exitSymbol1DivY2);
+    line(exitSymbol2DivX1, exitSymbol2DivY1, exitSymbol2DivX2, exitSymbol2DivY2);
+    fill(resetInk);
+    } else {
+    fill(resetInk);
+    rect(exitDivX, exitDivY, exitDivWidth, exitDivHeight);
+    line(exitSymbol1DivX1, exitSymbol1DivY1, exitSymbol1DivX2, exitSymbol1DivY2);
+    line(exitSymbol2DivX1, exitSymbol2DivY1, exitSymbol2DivX2, exitSymbol2DivY2);
+    fill(resetInk);
+  }
+  
 } // End Draw
 
 void mousePressed() {
@@ -754,6 +869,8 @@ void mousePressed() {
       //song[currentSong].play();
     }
   }
+  
+  //Exit
   
   if ( mouseX>exitDivX && mouseX<exitDivX+exitDivWidth && mouseY>exitDivY && mouseY<exitDivY+exitDivHeight ) {
       exit();
